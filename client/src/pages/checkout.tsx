@@ -286,10 +286,17 @@ const Checkout = () => {
           {/* Payment Form */}
           <div className="w-full md:w-1/2 p-8">
             <h3 className="font-heading font-bold text-xl mb-6">Payment Information</h3>
-            {clientSecret && (
+            {clientSecret && stripePromise ? (
               <Elements stripe={stripePromise} options={{ clientSecret }}>
                 <CheckoutForm onSuccess={handlePaymentSuccess} />
               </Elements>
+            ) : (
+              <div className="bg-yellow-50 p-4 rounded-md border border-yellow-200 text-yellow-800">
+                <h4 className="font-medium mb-2">We're upgrading our payment system!</h4>
+                <p className="text-sm">
+                  We're transitioning to Flutterwave for easier payments. Please check back soon or contact support for alternative payment options.
+                </p>
+              </div>
             )}
             <div className="mt-4 text-center text-dark/60 text-xs">
               <i className="ri-shield-check-line text-success mr-1"></i>
