@@ -1,0 +1,160 @@
+import { useState } from "react";
+import { Link, useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/use-auth";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+const Header = () => {
+  const [location] = useLocation();
+  const { user, logout, openLoginModal, openRegisterModal } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Museums", path: "/museums" },
+    { name: "How It Works", path: "/#how-it-works" },
+    { name: "About", path: "/#about" },
+    { name: "Contact", path: "/#contact" },
+  ];
+
+  const closeMenu = () => setIsOpen(false);
+
+  return (
+    <header className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo and Name */}
+        <Link href="/">
+          <a className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+              <i className="ri-gallery-line text-white text-xl"></i>
+            </div>
+            <div className="hidden md:block">
+              <h1 className="font-heading font-bold text-xl text-primary">Uganda Virtual Museums</h1>
+              <p className="text-xs text-dark/70">Explore Our Cultural Heritage</p>
+            </div>
+          </a>
+        </Link>
+        
+        {/* Navigation - Desktop */}
+        <nav className="hidden md:flex items-center space-x-6">
+          {navLinks.map((link) => (
+            <Link key={link.path} href={link.path}>
+              <a className={`font-medium hover:text-primary transition ${location === link.path ? 'text-primary' : 'text-dark'}`}>
+                {link.name}
+              </a>
+            </Link>
+          ))}
+        </nav>
+        
+        {/* User Actions */}
+        <div className="flex items-center space-x-3">
+          <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary" aria-label="Search">
+            <i className="ri-search-line mr-1"></i> <span className="hidden md:inline">Search</span>
+          </Button>
+          
+          {user ? (
+            <div className="flex items-center space-x-3">
+              <Link href="/account">
+                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary">
+                  <i className="ri-user-line mr-1"></i> <span className="hidden md:inline">{user.username}</span>
+                </Button>
+              </Link>
+              <Link href="/analytics">
+                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary">
+                  <i className="ri-bar-chart-line mr-1"></i> <span className="hidden md:inline">Analytics</span>
+                </Button>
+              </Link>
+              <Button 
+                variant="outline" 
+                className="border-primary text-primary hover:bg-primary hover:text-white"
+                onClick={logout}
+              >
+                Sign Out
+              </Button>
+            </div>
+          ) : (
+            <Button 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary hover:text-white"
+              onClick={openLoginModal}
+            >
+              Sign In
+            </Button>
+          )}
+          
+          {/* Mobile Menu */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" className="md:hidden" aria-label="Menu">
+                <i className="ri-menu-line text-xl"></i>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) => (
+                  <Link key={link.path} href={link.path}>
+                    <a 
+                      className={`py-2 px-4 rounded-md font-medium ${location === link.path ? 'bg-primary/10 text-primary' : 'text-dark hover:bg-gray-100'}`}
+                      onClick={closeMenu}
+                    >
+                      {link.name}
+                    </a>
+                  </Link>
+                ))}
+                
+                {!user && (
+                  <div className="flex flex-col gap-2 mt-4">
+                    <Button 
+                      className="w-full bg-primary text-white hover:bg-primary/90"
+                      onClick={() => {
+                        closeMenu();
+                        openLoginModal();
+                      }}
+                    >
+                      Sign In
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                      onClick={() => {
+                        closeMenu();
+                        openRegisterModal();
+                      }}
+                    >
+                      Register
+                    </Button>
+                  </div>
+                )}
+                
+                {user && (
+                  <div className="mt-4 flex flex-col gap-2">
+                    <Link href="/analytics">
+                      <a 
+                        className="py-2 px-4 rounded-md font-medium bg-primary/10 text-primary"
+                        onClick={closeMenu}
+                      >
+                        <i className="ri-bar-chart-line mr-1"></i> Analytics Dashboard
+                      </a>
+                    </Link>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                      onClick={() => {
+                        closeMenu();
+                        logout();
+                      }}
+                    >
+                      Sign Out
+                    </Button>
+                  </div>
+                )}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
