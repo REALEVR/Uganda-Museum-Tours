@@ -78,34 +78,19 @@
 }
 
 /* Add Uganda culture patterns */
+/* Clean border without pattern */
 .uganda-pattern-border {
   position: relative;
   overflow: hidden;
-}
-
-.uganda-pattern-border::before {
-  content: '';
-  position: absolute;
-  height: 8px;
-  left: 0;
-  right: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    hsl(200, 80%, 50%),
-    hsl(200, 80%, 50%) 10px,
-    hsl(195, 90%, 65%) 10px,
-    hsl(195, 90%, 65%) 20px,
-    hsl(210, 50%, 90%) 20px,
-    hsl(210, 50%, 90%) 30px
-  );
+  border-bottom: 3px solid hsl(200, 80%, 50%);
 }
 
 .uganda-pattern-border.top::before {
-  top: 0;
+  display: none;
 }
 
 .uganda-pattern-border.bottom::before {
-  bottom: 0;
+  display: none;
 }
 
 .uganda-background {
