@@ -20,19 +20,19 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+    <header className="sticky top-0 z-50 bg-white shadow-md uganda-pattern-border top">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo and Name */}
         <Link href="/">
-          <a className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+          <div className="flex items-center space-x-3 cursor-pointer">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
               <i className="ri-gallery-line text-white text-xl"></i>
             </div>
             <div className="hidden md:block">
-              <h1 className="font-heading font-bold text-xl text-primary">Uganda Virtual Museums</h1>
-              <p className="text-xs text-dark/70">Explore Our Cultural Heritage</p>
+              <h1 className="font-bold text-xl text-primary">Uganda Virtual Museums</h1>
+              <p className="text-xs text-secondary-foreground">Ekiziba ky'Obuwangwa Bwaffe</p>
             </div>
-          </a>
+          </div>
         </Link>
         
         {/* Navigation - Desktop */}
