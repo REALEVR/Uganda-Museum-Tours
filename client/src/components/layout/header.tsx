@@ -39,34 +39,34 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link key={link.path} href={link.path}>
-              <a className={`font-medium hover:text-primary transition ${location === link.path ? 'text-primary' : 'text-dark'}`}>
+              <div className={`font-medium hover:text-primary transition cursor-pointer ${location === link.path ? 'text-primary' : 'text-dark'}`}>
                 {link.name}
-              </a>
+              </div>
             </Link>
           ))}
         </nav>
         
         {/* User Actions */}
         <div className="flex items-center space-x-3">
-          <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary" aria-label="Search">
+          <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary button-hover-effect" aria-label="Search">
             <i className="ri-search-line mr-1"></i> <span className="hidden md:inline">Search</span>
           </Button>
           
           {user ? (
             <div className="flex items-center space-x-3">
               <Link href="/account">
-                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary">
+                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary button-hover-effect">
                   <i className="ri-user-line mr-1"></i> <span className="hidden md:inline">{user.username}</span>
                 </Button>
               </Link>
               <Link href="/analytics">
-                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary">
+                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary button-hover-effect">
                   <i className="ri-bar-chart-line mr-1"></i> <span className="hidden md:inline">Analytics</span>
                 </Button>
               </Link>
               <Button 
                 variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-white"
+                className="border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
                 onClick={logout}
               >
                 Sign Out
@@ -75,7 +75,7 @@ const Header = () => {
           ) : (
             <Button 
               variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-white"
+              className="border-secondary text-secondary hover:bg-secondary hover:text-white button-hover-effect"
               onClick={openLoginModal}
             >
               Sign In
@@ -93,19 +93,19 @@ const Header = () => {
               <nav className="flex flex-col gap-4 mt-8">
                 {navLinks.map((link) => (
                   <Link key={link.path} href={link.path}>
-                    <a 
-                      className={`py-2 px-4 rounded-md font-medium ${location === link.path ? 'bg-primary/10 text-primary' : 'text-dark hover:bg-gray-100'}`}
+                    <div 
+                      className={`py-2 px-4 rounded-md font-medium cursor-pointer ${location === link.path ? 'bg-primary/10 text-primary' : 'text-dark hover:bg-gray-100'}`}
                       onClick={closeMenu}
                     >
                       {link.name}
-                    </a>
+                    </div>
                   </Link>
                 ))}
                 
                 {!user && (
                   <div className="flex flex-col gap-2 mt-4">
                     <Button 
-                      className="w-full bg-primary text-white hover:bg-primary/90"
+                      className="w-full bg-secondary text-white hover:bg-secondary/90 button-hover-effect"
                       onClick={() => {
                         closeMenu();
                         openLoginModal();
@@ -115,7 +115,7 @@ const Header = () => {
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
                       onClick={() => {
                         closeMenu();
                         openRegisterModal();
@@ -129,16 +129,16 @@ const Header = () => {
                 {user && (
                   <div className="mt-4 flex flex-col gap-2">
                     <Link href="/analytics">
-                      <a 
-                        className="py-2 px-4 rounded-md font-medium bg-primary/10 text-primary"
+                      <div 
+                        className="py-2 px-4 rounded-md font-medium bg-primary/10 text-primary cursor-pointer"
                         onClick={closeMenu}
                       >
                         <i className="ri-bar-chart-line mr-1"></i> Analytics Dashboard
-                      </a>
+                      </div>
                     </Link>
                     <Button 
                       variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
                       onClick={() => {
                         closeMenu();
                         logout();
