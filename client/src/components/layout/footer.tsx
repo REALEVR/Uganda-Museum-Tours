@@ -56,17 +56,17 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/#pricing">
-                  <div className="hover:text-secondary transition cursor-pointer">Pricing</div>
+                  <div className="hover:text-white transition cursor-pointer">Pricing</div>
                 </Link>
               </li>
               <li>
                 <Link href="/#about">
-                  <div className="hover:text-secondary transition cursor-pointer">About Us</div>
+                  <div className="hover:text-white transition cursor-pointer">About Us</div>
                 </Link>
               </li>
               <li>
                 <Link href="/#contact">
-                  <div className="hover:text-secondary transition cursor-pointer">Contact</div>
+                  <div className="hover:text-white transition cursor-pointer">Contact</div>
                 </Link>
               </li>
             </ul>
@@ -78,12 +78,12 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link href="/help">
-                  <div className="hover:text-secondary transition cursor-pointer">Help Center</div>
+                  <div className="hover:text-white transition cursor-pointer">Help Center</div>
                 </Link>
               </li>
               <li>
                 <Link href="/faq">
-                  <div className="hover:text-secondary transition cursor-pointer">FAQs</div>
+                  <div className="hover:text-white transition cursor-pointer">FAQs</div>
                 </Link>
               </li>
               <li>
