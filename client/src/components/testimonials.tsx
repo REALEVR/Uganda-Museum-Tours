@@ -53,7 +53,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white shadow-md p-6 rounded-lg">
               <div className="flex items-center mb-4">
-                <div className="text-secondary">
+                <div className="text-primary">
                   {renderStars(testimonial.rating)}
                 </div>
               </div>

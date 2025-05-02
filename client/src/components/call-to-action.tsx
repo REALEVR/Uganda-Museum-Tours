@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const CallToAction = () => {
   return (
-    <section className="py-16 bg-primary text-white">
+    <section className="py-16 bg-primary/90 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-heading font-bold text-3xl mb-6 max-w-2xl mx-auto">
           Begin Your Cultural Journey Through Uganda's Museums Today

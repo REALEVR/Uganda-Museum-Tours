@@ -55,12 +55,12 @@ const Header = () => {
           {user ? (
             <div className="flex items-center space-x-3">
               <Link href="/account">
-                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary button-hover-effect">
+                <Button variant="ghost" className="px-4 py-2 text-primary/80 hover:text-primary button-hover-effect">
                   <i className="ri-user-line mr-1"></i> <span className="hidden md:inline">{user.username}</span>
                 </Button>
               </Link>
               <Link href="/analytics">
-                <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary button-hover-effect">
+                <Button variant="ghost" className="px-4 py-2 text-primary/80 hover:text-primary button-hover-effect">
                   <i className="ri-bar-chart-line mr-1"></i> <span className="hidden md:inline">Analytics</span>
                 </Button>
               </Link>
@@ -94,7 +94,7 @@ const Header = () => {
                 {navLinks.map((link) => (
                   <Link key={link.path} href={link.path}>
                     <div 
-                      className={`py-2 px-4 rounded-md font-medium cursor-pointer ${location === link.path ? 'bg-primary/10 text-primary' : 'text-dark hover:bg-gray-100'}`}
+                      className={`py-2 px-4 rounded-md font-medium cursor-pointer ${location === link.path ? 'bg-primary/10 text-primary' : 'text-primary/80 hover:bg-primary/5'}`}
                       onClick={closeMenu}
                     >
                       {link.name}

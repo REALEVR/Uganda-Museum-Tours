@@ -24,7 +24,7 @@
   /* Very Light Blue - Accent */
   --accent: 210 40% 95%;
   --accent-foreground: 210 50% 15%;
-  --destructive: 340 95% 60%;
+  --destructive: 260 95% 60%;
   --destructive-foreground: 0 0% 100%;
   /* Success color */
   --success: 160 80% 40%;
@@ -54,7 +54,7 @@
   /* Deep Blue - Accent */
   --accent: 210 50% 30%;
   --accent-foreground: 0 0% 98%;
-  --destructive: 340 70% 40%;
+  --destructive: 260 70% 40%;
   --destructive-foreground: 0 0% 98%;
   /* Success color */
   --success: 160 70% 35%;
