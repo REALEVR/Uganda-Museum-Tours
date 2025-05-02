@@ -14,7 +14,7 @@ const TourDemo = () => {
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="w-full lg:w-1/2">
           <h2 className="font-heading font-bold text-3xl mb-4">Experience Interactive Virtual Tours</h2>
-          <p className="text-dark/70 mb-6">
+          <p className="text-primary/80 mb-6">
             Our virtual tours offer a fully immersive experience with 360° panoramic views, interactive exhibits, and detailed information about artifacts and cultural significance.
           </p>
           <ul className="space-y-3 mb-8">
