@@ -1,6 +1,7 @@
-import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, boolean, timestamp, pgEnum } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+import { relations } from "drizzle-orm";
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
@@ -23,8 +24,8 @@ export const museums = pgTable("museums", {
 
 export const purchases = pgTable("purchases", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").notNull(),
-  museumId: integer("museum_id").notNull(),
+  userId: integer("user_id").notNull().references(() => users.id),
+  museumId: integer("museum_id").notNull().references(() => museums.id),
   purchaseDate: timestamp("purchase_date").notNull().defaultNow(),
   expiryDate: timestamp("expiry_date").notNull(),
   price: integer("price").notNull(),
@@ -41,14 +42,14 @@ export const bundles = pgTable("bundles", {
 
 export const bundleMuseums = pgTable("bundle_museums", {
   id: serial("id").primaryKey(),
-  bundleId: integer("bundle_id").notNull(),
-  museumId: integer("museum_id").notNull(),
+  bundleId: integer("bundle_id").notNull().references(() => bundles.id),
+  museumId: integer("museum_id").notNull().references(() => museums.id),
 });
 
 export const bundlePurchases = pgTable("bundle_purchases", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").notNull(),
-  bundleId: integer("bundle_id").notNull(),
+  userId: integer("user_id").notNull().references(() => users.id),
+  bundleId: integer("bundle_id").notNull().references(() => bundles.id),
   purchaseDate: timestamp("purchase_date").notNull().defaultNow(),
   expiryDate: timestamp("expiry_date").notNull(),
   price: integer("price").notNull(),
@@ -100,6 +101,55 @@ export const insertBundlePurchaseSchema = createInsertSchema(bundlePurchases).pi
   price: true,
   paymentIntentId: true,
 });
+
+// Relations
+export const usersRelations = relations(users, ({ many }) => ({
+  purchases: many(purchases),
+  bundlePurchases: many(bundlePurchases),
+}));
+
+export const museumsRelations = relations(museums, ({ many }) => ({
+  purchases: many(purchases),
+  bundleMuseums: many(bundleMuseums),
+}));
+
+export const bundlesRelations = relations(bundles, ({ many }) => ({
+  bundleMuseums: many(bundleMuseums),
+  bundlePurchases: many(bundlePurchases),
+}));
+
+export const purchasesRelations = relations(purchases, ({ one }) => ({
+  user: one(users, {
+    fields: [purchases.userId],
+    references: [users.id],
+  }),
+  museum: one(museums, {
+    fields: [purchases.museumId],
+    references: [museums.id],
+  }),
+}));
+
+export const bundleMuseumsRelations = relations(bundleMuseums, ({ one }) => ({
+  bundle: one(bundles, {
+    fields: [bundleMuseums.bundleId],
+    references: [bundles.id],
+  }),
+  museum: one(museums, {
+    fields: [bundleMuseums.museumId],
+    references: [museums.id],
+  }),
+}));
+
+export const bundlePurchasesRelations = relations(bundlePurchases, ({ one }) => ({
+  user: one(users, {
+    fields: [bundlePurchases.userId],
+    references: [users.id],
+  }),
+  bundle: one(bundles, {
+    fields: [bundlePurchases.bundleId],
+    references: [bundles.id],
+  }),
+}));
 
 // Types
 export type InsertUser = z.infer<typeof insertUserSchema>;

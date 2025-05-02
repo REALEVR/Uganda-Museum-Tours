@@ -383,4 +383,7 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// We'll use the MemStorage class to initialize the database with sample data
+// And then export the DatabaseStorage for actual use
+import { DatabaseStorage } from "./database-storage";
+export const storage = new DatabaseStorage();
