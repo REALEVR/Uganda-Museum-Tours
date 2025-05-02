@@ -40,33 +40,33 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-accent text-white">
+    <section className="py-16 bg-primary/20 text-primary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading font-bold text-3xl mb-3">What Our Users Say</h2>
-          <p className="text-white/80 max-w-2xl mx-auto">
+          <p className="text-primary/80 max-w-2xl mx-auto">
             Discover how virtual tours are connecting people to Uganda's cultural heritage
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <div key={index} className="bg-white shadow-md p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <div className="text-secondary">
                   {renderStars(testimonial.rating)}
                 </div>
               </div>
-              <p className="italic mb-6">
+              <p className="italic mb-6 text-primary/80">
                 "{testimonial.content}"
               </p>
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                  <i className="ri-user-line text-white/70"></i>
+                <div className="w-10 h-10 bg-primary/10 rounded-full mr-3 flex items-center justify-center">
+                  <i className="ri-user-line text-primary/70"></i>
                 </div>
                 <div>
-                  <h4 className="font-medium">{testimonial.author}</h4>
-                  <p className="text-white/70 text-sm">{testimonial.role}</p>
+                  <h4 className="font-medium text-primary">{testimonial.author}</h4>
+                  <p className="text-primary/70 text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>

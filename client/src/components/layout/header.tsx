@@ -30,7 +30,7 @@ const Header = () => {
             </div>
             <div className="hidden md:block">
               <h1 className="font-bold text-xl text-primary">Uganda Virtual Museums</h1>
-              <p className="text-xs text-secondary-foreground">Ekiziba ky'Obuwangwa Bwaffe</p>
+              <p className="text-xs text-primary/80">Ekiziba ky'Obuwangwa Bwaffe</p>
             </div>
           </div>
         </Link>
@@ -39,7 +39,7 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link key={link.path} href={link.path}>
-              <div className={`font-medium hover:text-primary transition cursor-pointer ${location === link.path ? 'text-primary' : 'text-dark'}`}>
+              <div className={`font-medium hover:text-primary transition cursor-pointer ${location === link.path ? 'text-primary' : 'text-primary/80'}`}>
                 {link.name}
               </div>
             </Link>
@@ -48,7 +48,7 @@ const Header = () => {
         
         {/* User Actions */}
         <div className="flex items-center space-x-3">
-          <Button variant="ghost" className="px-4 py-2 text-dark hover:text-primary button-hover-effect" aria-label="Search">
+          <Button variant="ghost" className="px-4 py-2 text-primary/80 hover:text-primary button-hover-effect" aria-label="Search">
             <i className="ri-search-line mr-1"></i> <span className="hidden md:inline">Search</span>
           </Button>
           
@@ -75,7 +75,7 @@ const Header = () => {
           ) : (
             <Button 
               variant="outline" 
-              className="border-secondary text-secondary hover:bg-secondary hover:text-white button-hover-effect"
+              className="border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
               onClick={openLoginModal}
             >
               Sign In
@@ -105,7 +105,7 @@ const Header = () => {
                 {!user && (
                   <div className="flex flex-col gap-2 mt-4">
                     <Button 
-                      className="w-full bg-secondary text-white hover:bg-secondary/90 button-hover-effect"
+                      className="w-full bg-primary text-white hover:bg-primary/90 button-hover-effect"
                       onClick={() => {
                         closeMenu();
                         openLoginModal();
