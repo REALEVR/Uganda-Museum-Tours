@@ -13,7 +13,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg">Uganda Virtual Museums</h3>
-                <p className="text-xs text-secondary">Ekiziba ky'Obuwangwa Bwaffe</p>
+                <p className="text-xs text-white/80">Ekiziba ky'Obuwangwa Bwaffe</p>
               </div>
             </div>
             <p className="mb-4">
@@ -88,17 +88,17 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/privacy">
-                  <div className="hover:text-secondary transition cursor-pointer">Privacy Policy</div>
+                  <div className="hover:text-white transition cursor-pointer">Privacy Policy</div>
                 </Link>
               </li>
               <li>
                 <Link href="/terms">
-                  <div className="hover:text-secondary transition cursor-pointer">Terms of Service</div>
+                  <div className="hover:text-white transition cursor-pointer">Terms of Service</div>
                 </Link>
               </li>
               <li>
                 <Link href="/refund">
-                  <div className="hover:text-secondary transition cursor-pointer">Refund Policy</div>
+                  <div className="hover:text-white transition cursor-pointer">Refund Policy</div>
                 </Link>
               </li>
             </ul>
@@ -113,12 +113,12 @@ const Footer = () => {
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="px-4 py-2 rounded-l-md w-full bg-white/10 border border-white/20 outline-none focus:border-secondary"
+                  className="px-4 py-2 rounded-l-md w-full bg-white/10 border border-white/20 outline-none focus:border-white"
                   aria-label="Email address" 
                 />
                 <button 
                   type="submit"
-                  className="bg-secondary text-white px-4 py-2 rounded-r-md hover:bg-secondary/90 transition button-hover-effect"
+                  className="bg-white text-primary px-4 py-2 rounded-r-md hover:bg-white/90 transition button-hover-effect"
                   aria-label="Subscribe"
                 >
                   <i className="ri-send-plane-fill"></i>

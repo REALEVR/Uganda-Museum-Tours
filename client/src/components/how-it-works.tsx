@@ -30,7 +30,7 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading font-bold text-3xl mb-3">How It Works</h2>
-          <p className="text-dark/70 max-w-2xl mx-auto">
+          <p className="text-primary/80 max-w-2xl mx-auto">
             Get started with your virtual museum experience in just a few simple steps
           </p>
         </div>

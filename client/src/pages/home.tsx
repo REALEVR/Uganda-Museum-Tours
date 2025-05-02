@@ -58,7 +58,7 @@ const Home = () => {
       <section id="museums" className="py-16 container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading font-bold text-3xl mb-3">Featured Museums</h2>
-          <p className="text-dark/70 max-w-2xl mx-auto">
+          <p className="text-primary/80 max-w-2xl mx-auto">
             Discover Uganda's rich cultural heritage through our curated selection of virtual museum tours
           </p>
         </div>
