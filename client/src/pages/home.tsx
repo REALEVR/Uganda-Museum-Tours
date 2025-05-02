@@ -28,7 +28,7 @@ const Home = () => {
       <section className="relative">
         <div 
           className="bg-cover bg-center h-[500px] md:h-[600px]" 
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1599586381308-39c343d13427?q=80&w=1470&auto=format&fit=crop')" }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1611348524140-53c9e3465ba7?q=80&w=1470&auto=format&fit=crop')" }}
         >
           <div className="absolute inset-0 bg-dark bg-opacity-60"></div>
           <div className="relative h-full container mx-auto px-4 flex flex-col justify-center items-start">
