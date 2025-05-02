@@ -30,7 +30,7 @@ const Header = () => {
             </div>
             <div className="hidden md:block">
               <h1 className="font-bold text-xl text-primary">Uganda Virtual Museums</h1>
-              <p className="text-xs text-primary/80">Ekiziba ky'Obuwangwa Bwaffe</p>
+              <p className="text-xs text-black bg-white px-2 py-0.5 rounded">Ekiziba ky'Obuwangwa Bwaffe</p>
             </div>
           </div>
         </Link>

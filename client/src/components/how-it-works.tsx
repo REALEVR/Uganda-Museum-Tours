@@ -42,7 +42,7 @@ const HowItWorks = () => {
                 <i className={`${step.icon} text-2xl text-primary`}></i>
               </div>
               <h3 className="font-heading font-bold text-lg mb-2">{step.title}</h3>
-              <p className="text-dark/70 text-sm">
+              <p className="text-primary/80 text-sm">
                 {step.description}
               </p>
             </div>
@@ -58,7 +58,7 @@ const HowItWorks = () => {
               </Button>
             </Link>
             <Link href="/#pricing">
-              <Button variant="outline" className="px-8 py-3 border border-accent text-accent rounded-md font-medium hover:bg-accent hover:text-white transition">
+              <Button variant="outline" className="px-8 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition">
                 View Pricing
               </Button>
             </Link>
