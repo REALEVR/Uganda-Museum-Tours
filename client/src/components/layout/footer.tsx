@@ -2,7 +2,7 @@ import { Link } from "wouter";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1D1D1D] text-white/80 pt-16 pb-8 uganda-pattern-border bottom">
+    <footer className="bg-primary/95 text-white/80 pt-16 pb-8 uganda-pattern-border bottom">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -20,16 +20,16 @@ const Footer = () => {
               Bringing Uganda's rich cultural heritage to the global audience through immersive virtual experiences.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-secondary transition button-hover-effect" aria-label="Facebook">
+              <a href="#" className="hover:text-white transition button-hover-effect" aria-label="Facebook">
                 <i className="ri-facebook-fill text-xl"></i>
               </a>
-              <a href="#" className="hover:text-secondary transition button-hover-effect" aria-label="Twitter">
+              <a href="#" className="hover:text-white transition button-hover-effect" aria-label="Twitter">
                 <i className="ri-twitter-fill text-xl"></i>
               </a>
-              <a href="#" className="hover:text-secondary transition button-hover-effect" aria-label="Instagram">
+              <a href="#" className="hover:text-white transition button-hover-effect" aria-label="Instagram">
                 <i className="ri-instagram-fill text-xl"></i>
               </a>
-              <a href="#" className="hover:text-secondary transition button-hover-effect" aria-label="YouTube">
+              <a href="#" className="hover:text-white transition button-hover-effect" aria-label="YouTube">
                 <i className="ri-youtube-fill text-xl"></i>
               </a>
             </div>
@@ -41,17 +41,17 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link href="/">
-                  <div className="hover:text-secondary transition cursor-pointer">Home</div>
+                  <div className="hover:text-white transition cursor-pointer">Home</div>
                 </Link>
               </li>
               <li>
                 <Link href="/museums">
-                  <div className="hover:text-secondary transition cursor-pointer">Museums</div>
+                  <div className="hover:text-white transition cursor-pointer">Museums</div>
                 </Link>
               </li>
               <li>
                 <Link href="/#how-it-works">
-                  <div className="hover:text-secondary transition cursor-pointer">How It Works</div>
+                  <div className="hover:text-white transition cursor-pointer">How It Works</div>
                 </Link>
               </li>
               <li>
