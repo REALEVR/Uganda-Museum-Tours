@@ -2,64 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Uganda flag colors and culture inspired theme */
+/* White and Sky Blue theme */
 :root {
-  /* Black color from Uganda flag */
+  /* White base */
   --background: 0 0% 100%;
-  --foreground: 0 0% 10%;
-  --muted: 40 20% 96%;
-  --muted-foreground: 0 0% 45%;
+  --foreground: 210 50% 15%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 210 30% 45%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
+  --popover-foreground: 210 50% 15%;
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
-  --border: 36 20% 90%;
-  --input: 36 20% 90%;
-  /* Red color from Uganda flag */
-  --primary: 0 70% 45%;
+  --card-foreground: 210 50% 15%;
+  --border: 210 20% 90%;
+  --input: 210 20% 90%;
+  /* Sky Blue - Primary */
+  --primary: 200 80% 50%;
   --primary-foreground: 0 0% 100%;
-  /* Yellow color from Uganda flag */
-  --secondary: 49 90% 60%; 
-  --secondary-foreground: 0 0% 10%;
-  /* Okra pattern inspired accent */
-  --accent: 29 65% 90%;
-  --accent-foreground: 0 0% 10%;
+  /* Lighter Blue - Secondary */
+  --secondary: 195 90% 65%; 
+  --secondary-foreground: 210 50% 15%;
+  /* Very Light Blue - Accent */
+  --accent: 210 40% 95%;
+  --accent-foreground: 210 50% 15%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 60 9.1% 97.8%;
-  /* Success color - inspired by lush greenery of Uganda */
-  --success: 120 50% 45%;
+  /* Success color */
+  --success: 160 80% 40%;
   --success-foreground: 0 0% 100%;
-  --ring: 0 70% 45%;
+  --ring: 200 80% 50%;
   --radius: 0.5rem;
 }
 
 .dark {
-  /* Dark mode with Uganda cultural themes */
-  --background: 0 0% 10%;
+  /* Dark mode with White and Sky Blue theme */
+  --background: 210 50% 10%;
   --foreground: 0 0% 98%;
-  --muted: 0 0% 20%;
-  --muted-foreground: 0 0% 65%;
-  --popover: 0 0% 12%;
+  --muted: 210 30% 20%;
+  --muted-foreground: 210 10% 70%;
+  --popover: 210 50% 12%;
   --popover-foreground: 0 0% 98%;
-  --card: 0 0% 12%;
+  --card: 210 50% 12%;
   --card-foreground: 0 0% 98%;
-  --border: 0 0% 25%;
-  --input: 0 0% 25%;
-  /* Red color from Uganda flag */
-  --primary: 0 70% 50%;
+  --border: 210 30% 25%;
+  --input: 210 30% 25%;
+  /* Sky Blue - Primary */
+  --primary: 200 80% 45%;
   --primary-foreground: 0 0% 100%;
-  /* Yellow color from Uganda flag with reduced brightness */
-  --secondary: 49 80% 50%; 
-  --secondary-foreground: 0 0% 10%;
-  /* Bark cloth inspired accent */
-  --accent: 29 35% 30%;
+  /* Lighter Blue - Secondary */
+  --secondary: 195 70% 55%; 
+  --secondary-foreground: 0 0% 100%;
+  /* Deep Blue - Accent */
+  --accent: 210 50% 30%;
   --accent-foreground: 0 0% 98%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  /* Success color - inspired by lush greenery of Uganda */
-  --success: 120 40% 40%;
+  /* Success color */
+  --success: 160 70% 35%;
   --success-foreground: 0 0% 100%;
-  --ring: 0 70% 50%;
+  --ring: 200 80% 45%;
   --radius: 0.5rem;
 }
 
@@ -91,12 +91,12 @@
   right: 0;
   background: repeating-linear-gradient(
     45deg,
-    hsl(0, 70%, 45%),
-    hsl(0, 70%, 45%) 10px,
-    hsl(49, 90%, 60%) 10px,
-    hsl(49, 90%, 60%) 20px,
-    hsl(0, 0%, 12%) 20px,
-    hsl(0, 0%, 12%) 30px
+    hsl(200, 80%, 50%),
+    hsl(200, 80%, 50%) 10px,
+    hsl(195, 90%, 65%) 10px,
+    hsl(195, 90%, 65%) 20px,
+    hsl(210, 50%, 90%) 20px,
+    hsl(210, 50%, 90%) 30px
   );
 }
 
@@ -111,15 +111,15 @@
 .uganda-background {
   background-color: hsl(0, 0%, 100%);
   background-image: 
-    radial-gradient(hsl(49, 90%, 95%, 0.15) 2px, transparent 2px),
-    radial-gradient(hsl(0, 70%, 95%, 0.15) 2px, transparent 2px);
+    radial-gradient(hsl(195, 90%, 85%, 0.15) 2px, transparent 2px),
+    radial-gradient(hsl(200, 80%, 85%, 0.15) 2px, transparent 2px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }
 
-.bark-cloth-texture {
-  background-color: hsl(29, 35%, 92%);
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='hsl(29, 35%, 70%)' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
+.sky-texture {
+  background-color: hsl(210, 50%, 95%);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='hsl(200, 80%, 70%)' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .button-hover-effect {
@@ -130,21 +130,21 @@
   @apply transition duration-300 ease-in-out hover:shadow-xl;
 }
 
-/* Custom styled scrollbar inspired by Uganda flag colors */
+/* Custom styled scrollbar with sky blue theme */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0, 0%, 95%);
+  background: hsl(210, 50%, 95%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(0, 70%, 45%);
+  background: hsl(200, 80%, 50%);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(0, 70%, 40%);
+  background: hsl(200, 80%, 40%);
 }
 
