@@ -99,51 +99,52 @@ const MuseumDetail = () => {
             <h2 className="font-heading font-bold text-2xl mb-4">About {museum.name}</h2>
             <p className="text-dark/80 leading-relaxed mb-6">{museum.description}</p>
             <p className="text-dark/80 leading-relaxed mb-6">
-              Experience the rich cultural heritage of Uganda through our immersive virtual tour. Explore artifacts, 
-              exhibits, and historical information at your own pace from anywhere in the world.
+              Step inside this museum virtually and explore authentic Ugandan cultural artifacts through our 
+              interactive 360° technology. Navigate through the exhibits at your own pace and discover the 
+              stories behind each display from anywhere in the world.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="bg-neutral/30 p-6 rounded-lg">
-                <h3 className="font-heading font-bold text-lg mb-3">Tour Features</h3>
+                <h3 className="font-heading font-bold text-lg mb-3">Virtual Tour Features</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>360° panoramic views of exhibits</span>
+                    <span>Immersive 360° views of all museum areas</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>Interactive information hotspots</span>
+                    <span>Click on exhibits for detailed information</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>Detailed descriptions of artifacts</span>
+                    <span>Learn about authentic Ugandan cultural artifacts</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>High-resolution imagery</span>
+                    <span>High-definition visuals with smooth navigation</span>
                   </li>
                 </ul>
               </div>
               
               <div className="bg-neutral/30 p-6 rounded-lg">
-                <h3 className="font-heading font-bold text-lg mb-3">Tour Information</h3>
+                <h3 className="font-heading font-bold text-lg mb-3">Virtual Tour Details</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <i className="ri-time-line text-primary mt-1 mr-2"></i>
-                    <span>Duration: {museum.duration} minutes</span>
+                    <span>Typical visit time: {museum.duration} minutes</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-global-line text-primary mt-1 mr-2"></i>
-                    <span>Available in English</span>
+                    <span>Tour interface in English</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-device-line text-primary mt-1 mr-2"></i>
-                    <span>Compatible with all devices</span>
+                    <span>Works on smartphones, tablets and computers</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-calendar-line text-primary mt-1 mr-2"></i>
-                    <span>Access for 30 days after purchase</span>
+                    <span>Unlimited access for 30 days after purchase</span>
                   </li>
                 </ul>
               </div>
@@ -173,7 +174,7 @@ const MuseumDetail = () => {
             <div className="p-6">
               <div className="mb-6">
                 <div className="text-3xl font-bold text-primary mb-1">${formattedPrice}</div>
-                <p className="text-dark/70 text-sm">One-time payment for 30 days access</p>
+                <p className="text-dark/70 text-sm">One-time fee for 30 days of unlimited virtual visits</p>
               </div>
               
               <Separator className="my-4" />
@@ -183,19 +184,19 @@ const MuseumDetail = () => {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>Full access to {museum.name}</span>
+                    <span>Complete virtual access to {museum.name}</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>Interactive 360° virtual tour</span>
+                    <span>Fully interactive RealEVR 3D experience</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>Detailed artifact information</span>
+                    <span>Information about authentic Ugandan artifacts</span>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-success mt-1 mr-2"></i>
-                    <span>Access on any device</span>
+                    <span>Works on mobile, tablet and desktop devices</span>
                   </li>
                 </ul>
               </div>
@@ -219,7 +220,7 @@ const MuseumDetail = () => {
                     onClick={handleStartTour}
                     className="w-full bg-primary text-white font-medium hover:bg-primary/90 py-3 mb-3"
                   >
-                    Purchase Tour Access
+                    Get Access to Virtual Tour
                   </Button>
                   <div className="text-center text-sm text-dark/70">
                     <i className="ri-lock-line mr-1"></i> Secure payment processing
@@ -228,11 +229,11 @@ const MuseumDetail = () => {
               )}
               
               <p className="mt-6 text-center text-sm text-dark/70">
-                Looking for better value? Check out our{" "}
+                Want to see both featured museums? Get our{" "}
                 <Link href="/#pricing">
-                  <a className="text-primary hover:underline">bundle packages</a>
+                  <a className="text-primary hover:underline">Pioneering Museums Pass</a>
                 </Link>
-                {" "}for access to multiple museums.
+                {" "}for access to Ssemagulu Museum and Museum of Technology at 30% savings.
               </p>
             </div>
           </div>
