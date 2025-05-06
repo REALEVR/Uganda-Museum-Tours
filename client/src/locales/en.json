@@ -1,0 +1,133 @@
+{
+  "common": {
+    "home": "Home",
+    "museums": "Museums",
+    "pricing": "Pricing",
+    "login": "Log In",
+    "register": "Sign Up",
+    "logout": "Log Out",
+    "account": "My Account",
+    "dashboard": "Dashboard",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Virtual Tours of Uganda",
+      "subtitle": "Explore Ugandan museums and cultural heritage from anywhere in the world",
+      "cta": "Start Exploring"
+    },
+    "features": {
+      "title": "Experience Uganda's Rich Cultural Heritage",
+      "subtitle": "Discover the stories and artifacts that shaped East African history",
+      "feature1": {
+        "title": "Immersive 360° Tours",
+        "description": "Step inside Uganda's most important historical sites with full panoramic views"
+      },
+      "feature2": {
+        "title": "Cultural Context",
+        "description": "Learn about artifacts with detailed information from expert curators"
+      },
+      "feature3": {
+        "title": "Accessible History",
+        "description": "Experience Uganda's museums from anywhere in the world, on any device"
+      }
+    },
+    "museums": {
+      "title": "Featured Museums",
+      "viewAll": "View All Museums",
+      "learnMore": "Learn More"
+    },
+    "pricing": {
+      "title": "Virtual Tour Passes",
+      "singlePass": "Single Museum Pass",
+      "bundlePass": "Pioneer Museums Bundle",
+      "allAccess": "All Access Pass",
+      "days": "days",
+      "perMuseum": "per museum",
+      "allMuseums": "all museums",
+      "buyNow": "Buy Now",
+      "learnMore": "Learn More"
+    }
+  },
+  "museums": {
+    "title": "Our Museums",
+    "subtitle": "Explore Uganda's diverse cultural institutions",
+    "filter": "Filter",
+    "sortBy": "Sort by",
+    "duration": "Duration",
+    "price": "Price",
+    "rating": "Rating",
+    "viewDetails": "View Details",
+    "startTour": "Start Tour",
+    "minutes": "minutes"
+  },
+  "museumDetail": {
+    "virtualTour": "Virtual Museum Tour",
+    "about": "About This Museum",
+    "culturalSignificance": "Cultural Significance",
+    "artifacts": "Featured Artifacts",
+    "culturalElements": "Cultural Elements",
+    "tourFeatures": "Experience Features",
+    "tourTechnology": "Tour Technology",
+    "viewing": "360° Viewing",
+    "viewingDesc": "Complete immersive reconstruction of historical spaces",
+    "info": "Artifact Info",
+    "infoDesc": "Interactive information nodes with historical context",
+    "content": "Cultural Content",
+    "contentDesc": "Authentic Ugandan cultural data and narratives",
+    "platform": "Cross-Platform",
+    "platformDesc": "Works on all devices with no additional software",
+    "duration": "Tour Duration: Approximately {{duration}} minutes",
+    "accessPeriod": "Access Period: 30 days from purchase",
+    "tourPass": "Virtual Tour Pass",
+    "rating": "Rating",
+    "minTour": "min tour",
+    "dayAccess": "30-day access to virtual tour",
+    "includes": "Your Tour Includes:",
+    "reconstruction": "Full 360° virtual reconstruction of {{name}}",
+    "technology": "Interactive RealEVR visualization technology",
+    "database": "Complete artifact database with historical context",
+    "devices": "Access on all your devices",
+    "alreadyAccess": "You already have access to this tour",
+    "startTour": "Start Virtual Tour",
+    "buyTour": "Buy Virtual Tour",
+    "secure": "Secure payment processing",
+    "saveBundle": "Save with a Bundle",
+    "bundleDesc": "Get access to both pioneering museums with our",
+    "pioneering": "Pioneering Museums Pass",
+    "save": "and save 30%",
+    "learnMore": "Learn More",
+    "preview": "Live Preview"
+  },
+  "auth": {
+    "login": {
+      "title": "Log In",
+      "username": "Username",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Log In",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up"
+    },
+    "register": {
+      "title": "Create Account",
+      "name": "Full Name",
+      "email": "Email",
+      "username": "Username",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "terms": "I agree to the Terms and Conditions",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In"
+    }
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "backHome": "Back to Home",
+    "serverError": "Server error",
+    "tryAgain": "Please try again later",
+    "unauthorized": "You need to be logged in to access this page"
+  }
+}
