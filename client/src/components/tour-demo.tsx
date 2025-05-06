@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import VirtualTourViewer from "@/components/ui/virtual-tour-viewer";
 
 const TourDemo = () => {
   const [showDemo, setShowDemo] = useState(false);
+  const [selectedMuseum, setSelectedMuseum] = useState<string>("ssemagulu");
   
   const handleWatchDemo = () => {
+    setShowDemo(true);
+  };
+
+  const handleSelectMuseum = (museum: string) => {
+    setSelectedMuseum(museum);
     setShowDemo(true);
   };
 
@@ -39,6 +44,24 @@ const TourDemo = () => {
               <span>Available on all devices - mobile, tablet and desktop</span>
             </li>
           </ul>
+          <div className="flex space-x-4 mb-6">
+            <Button 
+              onClick={() => handleSelectMuseum("ssemagulu")}
+              className={`px-4 py-2 ${selectedMuseum === "ssemagulu" ? 
+                "bg-primary text-white" : 
+                "bg-primary/10 text-primary"} rounded-md font-medium hover:bg-primary/90 hover:text-white transition`}
+            >
+              <i className="ri-building-line mr-2"></i> Ssemagulu Museum
+            </Button>
+            <Button 
+              onClick={() => handleSelectMuseum("technology")}
+              className={`px-4 py-2 ${selectedMuseum === "technology" ? 
+                "bg-primary text-white" : 
+                "bg-primary/10 text-primary"} rounded-md font-medium hover:bg-primary/90 hover:text-white transition`}
+            >
+              <i className="ri-computer-line mr-2"></i> Museum of Technology
+            </Button>
+          </div>
           <Button 
             onClick={handleWatchDemo}
             className="px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition flex items-center"
@@ -48,17 +71,23 @@ const TourDemo = () => {
         </div>
         <div className="w-full lg:w-1/2">
           {showDemo ? (
-            <VirtualTourViewer 
-              imageUrl="https://realevr.com/SSEMAGULU%20MUSEUM/"
-              title="Ssemagulu Museum"
-              subtitle="Virtual Tour Experience"
-              className="h-[400px] rounded-lg overflow-hidden shadow-xl"
-            />
+            <div className="h-[400px] rounded-lg overflow-hidden shadow-xl">
+              <iframe 
+                src={selectedMuseum === "ssemagulu" ? 
+                  "https://realevr.com/SSEMAGULU%20MUSEUM/" : 
+                  "https://realevr.com/MUSEUM%20OF%20TECHNOLOGY/"}
+                title={selectedMuseum === "ssemagulu" ? "Ssemagulu Museum" : "Museum of Technology"}
+                className="w-full h-full border-0"
+                allowFullScreen
+              ></iframe>
+            </div>
           ) : (
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1651972497156-27686f2dce9e?q=80&w=1974&auto=format&fit=crop"
-                alt="Ssemagulu Museum virtual tour" 
+                src={selectedMuseum === "ssemagulu" ? 
+                  "https://images.unsplash.com/photo-1651972497156-27686f2dce9e?q=80&w=1974&auto=format&fit=crop" : 
+                  "https://images.unsplash.com/photo-1551696785-927d4ac2d35b?q=80&w=2070&auto=format&fit=crop"}
+                alt={selectedMuseum === "ssemagulu" ? "Ssemagulu Museum virtual tour" : "Museum of Technology virtual tour"} 
                 className="w-full rounded-lg"
               />
               <div className="absolute inset-0 bg-dark/40 flex items-center justify-center">
@@ -75,7 +104,9 @@ const TourDemo = () => {
               <div className="absolute bottom-0 left-0 right-0 bg-dark/70 text-white p-4">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h4 className="font-heading font-medium text-sm">Ssemagulu Museum</h4>
+                    <h4 className="font-heading font-medium text-sm">
+                      {selectedMuseum === "ssemagulu" ? "Ssemagulu Museum" : "Museum of Technology"}
+                    </h4>
                     <p className="text-white/70 text-xs">Virtual Tour Experience</p>
                   </div>
                   <div className="flex space-x-3">

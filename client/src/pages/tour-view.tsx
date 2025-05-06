@@ -139,13 +139,28 @@ const TourView = () => {
         
         {/* Tour Viewer Section */}
         <div className="bg-dark rounded-lg overflow-hidden shadow-xl">
-          <VirtualTourViewer 
-            imageUrl={museum.panellumUrl}
-            hotspots={hotspots}
-            title={museum.name}
-            subtitle="Full Access Tour"
-            className="h-[70vh] rounded-lg overflow-hidden"
-          />
+          {museum.panellumUrl.includes('realevr.com') ? (
+            <div className="h-[70vh] rounded-lg overflow-hidden relative">
+              <iframe 
+                src={museum.panellumUrl}
+                title={museum.name}
+                className="w-full h-full border-0"
+                allowFullScreen
+              ></iframe>
+              <div className="absolute top-4 left-4 bg-dark/70 text-white py-2 px-4 rounded-md">
+                <h3 className="font-heading font-bold text-sm">{museum.name}</h3>
+                <p className="text-white/70 text-xs">Full Access Tour</p>
+              </div>
+            </div>
+          ) : (
+            <VirtualTourViewer 
+              imageUrl={museum.panellumUrl}
+              hotspots={hotspots}
+              title={museum.name}
+              subtitle="Full Access Tour"
+              className="h-[70vh] rounded-lg overflow-hidden"
+            />
+          )}
         </div>
         
         {/* Tour Information and Controls */}
@@ -205,7 +220,7 @@ const TourView = () => {
                   <p className="text-sm text-dark/70 mb-4">
                     If you're experiencing any technical issues with your tour, please contact our support team.
                   </p>
-                  <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-white">
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
                     <i className="ri-customer-service-line mr-2"></i> Contact Support
                   </Button>
                 </div>
