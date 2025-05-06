@@ -158,27 +158,19 @@ const MuseumDetail = () => {
   };
 
   return (
-    <div className="futuristic-vr-background min-h-screen">
-      {renderDataNodes()}
-      
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        {/* Futuristic header */}
+    <div className="clean-background min-h-screen">
+      <div className="container mx-auto px-4 py-12 relative">
+        {/* Clean, minimal header */}
         <motion.div 
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <div className="time-marker text-white/90">CHRONOSERVER ACCESS // {futureYear}</div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 glow-text text-white">Ugandan Heritage Archives</h1>
-          <div className="flex items-center justify-center mb-3">
-            <div className="h-0.5 w-16 bg-primary/50 mr-3"></div>
-            <h2 className="text-xl md:text-2xl text-primary">{museum.name}</h2>
-            <div className="h-0.5 w-16 bg-primary/50 ml-3"></div>
-          </div>
-          <p className="text-blue-100/80 max-w-2xl mx-auto">
-            <span className="text-primary">{"<"}</span> Accessing digital preservation archive from early 21st century Uganda 
-            <span className="text-primary">{" />"}</span>
+          <div className="subtle-accent mb-2">Virtual Museum Tour</div>
+          <h1 className="section-title mb-3">{museum.name}</h1>
+          <p className="section-subtitle mx-auto text-center">
+            Explore Uganda's rich cultural heritage through our immersive virtual tour experience
           </p>
         </motion.div>
       
@@ -187,7 +179,7 @@ const MuseumDetail = () => {
           <div className="w-full lg:w-2/3">
             {showPreview ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               >
@@ -195,34 +187,33 @@ const MuseumDetail = () => {
                   <VirtualTourViewer 
                     imageUrl={museum.panellumUrl}
                     title={museum.name}
-                    subtitle="Historical Immersion (Limited Access)"
-                    className="h-[500px] rounded-lg overflow-hidden shadow-lg glow-border"
+                    subtitle="Interactive 360° Tour"
+                    className="h-[500px] rounded-2xl overflow-hidden shadow-lg"
                   />
-                  <div className="absolute top-3 left-3 bg-black/70 py-1 px-3 rounded-full text-xs text-white">
-                    <span className="text-primary">⦿</span> LIVE RECONSTRUCTION
+                  <div className="absolute top-4 left-4 bg-black/50 py-1 px-3 rounded-full text-xs text-white">
+                    <span className="text-primary mr-1">●</span> Live Preview
                   </div>
                 </div>
               </motion.div>
             ) : (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="relative rounded-lg overflow-hidden futuristic-card"
+                className="relative rounded-2xl overflow-hidden clean-card"
               >
                 <img 
                   src={museum.imageUrl} 
                   alt={museum.name} 
                   className="w-full h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center">
-                  <div className="time-marker mb-3">HISTORICAL SITE · CIRCA 2025</div>
-                  <h2 className="text-white text-2xl font-bold mb-6">{museum.name}</h2>
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex flex-col items-center justify-center">
+                  <h2 className="text-white text-2xl font-semibold mb-6">{museum.name}</h2>
                   <Button 
-                    className="px-6 py-3 bg-primary text-white font-medium hover:bg-primary/90 glow-border"
+                    className="clean-button px-8 py-3"
                     onClick={() => setShowPreview(true)}
                   >
-                    <i className="ri-history-line mr-2"></i> Activate Time Portal
+                    <i className="ri-play-circle-line mr-2"></i> Start Virtual Tour
                   </Button>
                 </div>
               </motion.div>
@@ -418,7 +409,7 @@ const MuseumDetail = () => {
                   <p className="text-sm">
                     Access both pioneering museums in a single temporal stream with our{" "}
                     <Link href="/#pricing">
-                      <a className="text-primary hover:underline glow-text">Pioneering Museums Time Key</a>
+                      <span className="text-primary hover:underline glow-text cursor-pointer">Pioneering Museums Time Key</span>
                     </Link>
                     {" "}at 30% reduced temporal credit allocation.
                   </p>

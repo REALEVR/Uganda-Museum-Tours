@@ -39,71 +39,71 @@ export async function seedDatabase() {
     // Create museums with authentic Ugandan cultural images
     const ugandaNationalMuseum: InsertMuseum = {
       name: "Uganda National Museum",
-      description: "The oldest museum in East Africa, featuring exhibits on Uganda's cultural and archaeological heritage. Established in 1908, it houses traditional artifacts from various Ugandan ethnic groups.",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Uganda_Museum.jpg/1200px-Uganda_Museum.jpg",
+      description: "The oldest museum in East Africa, established in 1908, housing a rich collection of archaeological findings, ethnographic artifacts, and cultural relics. The museum preserves Uganda's diverse heritage with exhibits on traditional agricultural tools, hunting equipment, and ceremonial objects from over 50 ethnic groups across the country. Musical instruments, royal regalia, and traditional attire reveal the complex social structures that have defined Ugandan societies for centuries.",
+      imageUrl: "https://images.unsplash.com/photo-1555662800-d6429edbad12?q=80&w=1600&auto=format&fit=crop",
       duration: 120,
       price: 1500,
-      rating: 4,
+      rating: 42,
       panellumUrl: "https://ugandawildlife.org/wp-content/uploads/2022/06/hs-2.jpg"
     };
     
     const kabakasPalace: InsertMuseum = {
       name: "Kabaka's Palace & Idi Amin Torture Chambers",
-      description: "Historical site showcasing the residence of the Buganda king and the infamous torture chambers from Idi Amin's regime. A powerful reminder of Uganda's complex political history.",
-      imageUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/37/87/53/img-20160128-152920-largejpg.jpg?w=1200&h=-1&s=1",
+      description: "A complex historical site with dual significance: the majestic traditional palace of the Buganda kings (Kabakas) alongside underground chambers that bear witness to the darker periods of Uganda's past under Idi Amin's regime. The palace architecture showcases traditional Ganda design with conical thatched roofs and intricate woodwork, while the preserved chambers provide a sobering reminder of political oppression, creating a powerful historical narrative of both cultural pride and national resilience.",
+      imageUrl: "https://images.unsplash.com/photo-1623866571829-67d5b5c3ebd2?q=80&w=1600&auto=format&fit=crop",
       duration: 90,
       price: 2000,
-      rating: 4,
+      rating: 38,
       panellumUrl: "https://theeagleonline.com.ng/wp-content/uploads/2015/07/buganda-palace-1.jpg"
     };
     
     const ndereCulturalCentre: InsertMuseum = {
       name: "Ndere Cultural Centre",
-      description: "A living museum where visitors can experience traditional Ugandan music, dance, and cuisine. Enjoy authentic performances and immerse yourself in Uganda's vibrant cultural expressions.",
-      imageUrl: "https://ugandatourismcenter.com/wp-content/uploads/2021/09/Ndere-Cultural-Center-UTC.jpg",
+      description: "A living museum celebrating Uganda's performing arts through colorful dance, music, and storytelling traditions. Weekly performances feature over 20 ethnic groups' unique expressions, from the energetic jumping dances of the Batoro to the intricate royal dances of the Baganda. Visitors can explore traditional instruments like the enanga (harp), endingidi (tube fiddle), and various drums that form the backbone of Ugandan ceremonial music. The Centre preserves oral traditions and cultural knowledge through interactive demonstrations of craft-making, cooking methods, and spiritual practices.",
+      imageUrl: "https://images.unsplash.com/photo-1574756762862-3ffa7f61c5e5?q=80&w=1600&auto=format&fit=crop",
       duration: 180,
       price: 2500,
-      rating: 5,
+      rating: 48,
       panellumUrl: "https://www.africanmeccasafaris.com/wp-content/uploads/2021/05/Uganda-Travel-Ndere-Cultural-Center-Kampala-Africa-Tours6.jpg"
     };
     
     const kasubi: InsertMuseum = {
       name: "Kasubi Tombs",
-      description: "UNESCO World Heritage site serving as the burial ground for Buganda kings, featuring unique architectural traditions. The main tomb building is a masterpiece of traditional Ganda architecture.",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Kasubi_Tombs_Kampala_Uganda.jpg",
+      description: "A UNESCO World Heritage site housing the sacred burial grounds of four Buganda kings (Kabakas) within a circular thatched structure called Muzibu-Azaala-Mpanga. This architectural masterpiece represents the spiritual and political heart of the Buganda Kingdom, built entirely with natural materials and traditional techniques without using a single nail. The interior features sacred chambers divided by bark cloth screens and woven reed partitions, with royal regalia and symbolic artifacts marking each king's reign. Though damaged by fire in 2010, the ongoing restoration follows ancient knowledge passed through generations of traditional craftspeople.",
+      imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop",
       duration: 60,
       price: 1800,
-      rating: 4,
+      rating: 40,
       panellumUrl: "https://whc.unesco.org/uploads/thumbs/site_1022_0004-750-750-20151104162346.jpg"
     };
     
     const igongo: InsertMuseum = {
       name: "Igongo Cultural Centre",
-      description: "Museum showcasing the heritage of western Uganda, particularly the Ankole kingdom history. Displays include traditional homestead reconstructions and artifacts from the region.",
-      imageUrl: "https://www.museumfuturesforum.org/wp-content/uploads/2023/04/Igongo-Cultural-Musuem-Uganda-1.png",
+      description: "A comprehensive museum preserving the heritage of western Uganda, particularly the Ankole and neighboring kingdoms. The centre features meticulously reconstructed traditional homesteads and cattle kraals that demonstrate the region's pastoral lifestyle and architectural techniques. Its extensive collection includes ancient tools for farming and animal husbandry, ceremonial objects for important rites of passage, and royal emblems from the Ankole monarchy. Interactive exhibits explain traditional knowledge systems about medicine, weather prediction, and sustainable land management that have sustained communities for centuries in harmony with the region's grassland ecosystems.",
+      imageUrl: "https://images.unsplash.com/photo-1531321053571-054653dd8a21?q=80&w=1600&auto=format&fit=crop",
       duration: 120,
       price: 1700,
-      rating: 4,
+      rating: 41,
       panellumUrl: "https://pbs.twimg.com/media/CgVo6HoWwAA7PRl.jpg"
     };
     
     const ssemagulu: InsertMuseum = {
       name: "Ssemagulu Museum",
-      description: "Pioneering cultural museum dedicated to preserving traditional Buganda crafts, tools, and practices. The museum houses an impressive collection of royal regalia and everyday items.",
-      imageUrl: "https://i0.wp.com/realevr.global/wp-content/uploads/2022/07/Compressed_GIF-2022-07-18-14.03.04.gif?resize=818%2C460&ssl=1",
+      description: "A pioneering cultural museum dedicated to the preservation and celebration of Buganda's rich cultural heritage. Its comprehensive collection features royal regalia including ceremonial spears, shields, and intricate beadwork from the Buganda court, alongside everyday items like traditional bark cloth (a UNESCO-recognized cultural treasure), handcrafted musical instruments, and agricultural implements. Visitors can explore reconstructed traditional Ganda homes showing architectural techniques and spatial arrangements that reflect social hierarchies and family structures. The museum's oral history archives contain recorded interviews with elders sharing forgotten stories, proverbs, and songs that document the cultural wisdom passed through generations.",
+      imageUrl: "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?q=80&w=1600&auto=format&fit=crop",
       duration: 90,
       price: 1500,
-      rating: 4,
+      rating: 45,
       panellumUrl: "https://realevr.com/SSEMAGULU%20MUSEUM/"
     };
     
     const technologyMuseum: InsertMuseum = {
       name: "Museum of Technology",
-      description: "Contemporary museum highlighting Uganda's technological innovations and progress through interactive exhibits. The museum charts Uganda's journey from traditional technologies to modern innovations.",
-      imageUrl: "https://techpoint.africa/wp-content/uploads/2019/05/Uganda.jpg",
+      description: "A forward-looking institution charting Uganda's technological evolution from indigenous innovations to modern digital solutions. Interactive exhibits demonstrate traditional technologies like iron smelting, architectural innovations in traditional building methods, and agricultural tools adapted to local conditions over centuries. The museum traces Uganda's telecommunication journey from traditional talking drums to modern digital networks, showcasing locally developed apps and tech solutions addressing uniquely Ugandan challenges. Special exhibits highlight pioneering Ugandan women in science and technology, renewable energy innovations, and technology's role in cultural preservation, creating a narrative of continuity between traditional knowledge systems and contemporary technological advancement.",
+      imageUrl: "https://images.unsplash.com/photo-1581092446343-379129d150db?q=80&w=1600&auto=format&fit=crop",
       duration: 120,
       price: 2200,
-      rating: 5,
+      rating: 47,
       panellumUrl: "https://realevr.com/MUSEUM%20OF%20TECHNOLOGY/"
     };
     
