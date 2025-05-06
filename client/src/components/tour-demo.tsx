@@ -49,16 +49,16 @@ const TourDemo = () => {
         <div className="w-full lg:w-1/2">
           {showDemo ? (
             <VirtualTourViewer 
-              imageUrl="https://pannellum.org/images/alma.jpg"
-              title="Uganda National Museum"
-              subtitle="Historical Artifacts Section"
+              imageUrl="https://realevr.com/SSEMAGULU%20MUSEUM/"
+              title="Ssemagulu Museum"
+              subtitle="Virtual Tour Experience"
               className="h-[400px] rounded-lg overflow-hidden shadow-xl"
             />
           ) : (
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1374&auto=format&fit=crop" 
-                alt="Virtual museum tour interface" 
+                src="https://images.unsplash.com/photo-1651972497156-27686f2dce9e?q=80&w=1974&auto=format&fit=crop"
+                alt="Ssemagulu Museum virtual tour" 
                 className="w-full rounded-lg"
               />
               <div className="absolute inset-0 bg-dark/40 flex items-center justify-center">
@@ -75,8 +75,8 @@ const TourDemo = () => {
               <div className="absolute bottom-0 left-0 right-0 bg-dark/70 text-white p-4">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h4 className="font-heading font-medium text-sm">Uganda National Museum</h4>
-                    <p className="text-white/70 text-xs">Historical Artifacts Section</p>
+                    <h4 className="font-heading font-medium text-sm">Ssemagulu Museum</h4>
+                    <p className="text-white/70 text-xs">Virtual Tour Experience</p>
                   </div>
                   <div className="flex space-x-3">
                     <button className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30">

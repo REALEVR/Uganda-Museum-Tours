@@ -107,21 +107,21 @@ export async function seedDatabase() {
       panellumUrl: "https://realevr.com/MUSEUM%20OF%20TECHNOLOGY/"
     };
     
-    // Insert all museums
-    const [museum1] = await db.insert(museums).values(ugandaNationalMuseum).returning();
-    const [museum2] = await db.insert(museums).values(kabakasPalace).returning();
-    const [museum3] = await db.insert(museums).values(ndereCulturalCentre).returning();
-    const [museum4] = await db.insert(museums).values(kasubi).returning();
-    const [museum5] = await db.insert(museums).values(igongo).returning();
-    const [museum6] = await db.insert(museums).values(ssemagulu).returning();
-    const [museum7] = await db.insert(museums).values(technologyMuseum).returning();
+    // Insert all museums - starting with our featured museums
+    const [museum1] = await db.insert(museums).values(ssemagulu).returning();
+    const [museum2] = await db.insert(museums).values(technologyMuseum).returning();
+    const [museum3] = await db.insert(museums).values(ugandaNationalMuseum).returning();
+    const [museum4] = await db.insert(museums).values(kabakasPalace).returning();
+    const [museum5] = await db.insert(museums).values(ndereCulturalCentre).returning();
+    const [museum6] = await db.insert(museums).values(kasubi).returning();
+    const [museum7] = await db.insert(museums).values(igongo).returning();
     
     console.log(`Created ${7} museums`);
     
     // Create bundles
     const museumBundle: InsertBundle = {
-      name: "Historical Museums Pass",
-      description: "Access to the Uganda National Museum and Kabaka's Palace for 30 days.",
+      name: "Pioneering Museums Pass",
+      description: "Access to the Ssemagulu Museum and Museum of Technology for 30 days.",
       price: 3000,
       validityDays: 30,
     };
