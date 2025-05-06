@@ -1,72 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* White and Sky Blue theme with Futuristic Elements */
+/* Tesla-inspired Design System with Ugandan Cultural Elements */
 :root {
-  /* White base with subtle blue tint */
-  --background: 210 30% 100%;
-  --foreground: 210 50% 15%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 210 30% 45%;
-  --popover: 210 30% 100%;
-  --popover-foreground: 210 50% 15%;
-  --card: 210 30% 100%;
-  --card-foreground: 210 50% 15%;
-  --border: 210 20% 90%;
-  --input: 210 20% 90%;
-  /* Vibrant Blue - Primary */
+  /* Tesla-inspired clean, minimal color scheme */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --border: 0 0% 92%;
+  --input: 0 0% 90%;
+  
+  /* Rich blue - maintains Uganda's sky blue theme but with Tesla's refinement */
   --primary: 210 100% 50%;
   --primary-foreground: 0 0% 100%;
-  /* Ocean Blue - Secondary */
-  --secondary: 195 90% 60%;
-  --secondary-foreground: 210 50% 15%;
-  /* Soft Blue - Accent */
-  --accent: 200 90% 95%;
-  --accent-foreground: 210 50% 15%;
-  /* Purple for Destructive */
-  --destructive: 280 90% 50%;
+  
+  /* Subtle secondary blue */
+  --secondary: 205 90% 40%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Soft, clean accent */
+  --accent: 210 90% 97%;
+  --accent-foreground: 210 80% 40%;
+  
+  /* Preserved alert colors */
+  --destructive: 0 90% 60%;
   --destructive-foreground: 0 0% 100%;
-  /* Emerald for Success */
-  --success: 145 80% 45%;
+  
+  /* Success color */
+  --success: 160 90% 40%;
   --success-foreground: 0 0% 100%;
+  
   --ring: 210 100% 50%;
   --radius: 0.5rem;
   
-  /* Futuristic UI Variables */
-  --glow-blue: 0 0 8px rgba(32, 156, 238, 0.7);
-  --glow-purple: 0 0 8px rgba(126, 34, 206, 0.7);
-  --tech-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23209cee' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Tesla-inspired UI effects */
+  --glow-blue: 0 0 15px rgba(0, 102, 255, 0.4);
+  --tesla-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 
+                 0 2px 4px rgba(0, 0, 0, 0.05), 
+                 0 4px 8px rgba(0, 0, 0, 0.05);
+  --tech-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233e6ae1' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark {
-  /* Dark mode with White and Sky Blue theme */
-  --background: 210 50% 10%;
+  /* Dark mode - Tesla-inspired sleek dark theme */
+  --background: 0 0% 8%;
   --foreground: 0 0% 98%;
-  --muted: 210 30% 20%;
-  --muted-foreground: 210 10% 70%;
-  --popover: 210 50% 12%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --popover: 0 0% 10%;
   --popover-foreground: 0 0% 98%;
-  --card: 210 50% 12%;
+  --card: 0 0% 12%;
   --card-foreground: 0 0% 98%;
-  --border: 210 30% 25%;
-  --input: 210 30% 25%;
-  /* Sky Blue - Primary */
-  --primary: 200 80% 45%;
+  --border: 0 0% 20%;
+  --input: 0 0% 18%;
+  
+  /* Primary blue - brighter in dark mode */
+  --primary: 210 100% 55%;
   --primary-foreground: 0 0% 100%;
-  /* Lighter Blue - Secondary */
-  --secondary: 195 70% 55%; 
+  
+  /* Secondary blue - adjusted for dark mode */
+  --secondary: 205 85% 45%;
   --secondary-foreground: 0 0% 100%;
-  /* Deep Blue - Accent */
-  --accent: 210 50% 30%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 260 70% 40%;
+  
+  /* Subtle accent for dark mode */
+  --accent: 210 50% 20%;
+  --accent-foreground: 210 80% 80%;
+  
+  --destructive: 0 90% 50%;
   --destructive-foreground: 0 0% 98%;
-  /* Success color */
-  --success: 160 70% 35%;
+  
+  /* Success color for dark mode */
+  --success: 160 80% 35%;
   --success-foreground: 0 0% 100%;
-  --ring: 200 80% 45%;
-  --radius: 0.5rem;
+  
+  --ring: 210 100% 55%;
 }
 
 @layer base {
@@ -75,72 +89,211 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  /* Tesla-style headings */
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+  }
+  
+  /* Button styles */
+  button {
+    transition: all 0.3s cubic-bezier(0.5, 0, 0, 1);
   }
 }
 
-/* Add Uganda culture patterns */
-/* Clean border without pattern */
-.uganda-pattern-border {
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid hsl(200, 80%, 50%);
+/* Tesla-inspired Components */
+.tesla-nav {
+  @apply fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.5, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.uganda-pattern-border.top::before {
-  display: none;
+.dark .tesla-nav {
+  background-color: rgba(23, 26, 32, 0.6);
 }
 
-.uganda-pattern-border.bottom::before {
-  display: none;
+.tesla-nav.scrolled {
+  @apply shadow-md;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.uganda-background {
-  background-color: hsl(0, 0%, 100%);
+.dark .tesla-nav.scrolled {
+  background-color: rgba(23, 26, 32, 0.9);
+}
+
+.tesla-button {
+  @apply inline-block px-6 py-3 font-medium text-center uppercase tracking-wider cursor-pointer;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.5, 0, 0, 1);
+  backdrop-filter: blur(8px);
+  max-width: 280px;
+  width: 100%;
+}
+
+.tesla-button.primary {
+  @apply bg-primary text-white;
+}
+
+.tesla-button.secondary {
+  background-color: rgba(244, 244, 244, 0.65);
+  color: hsl(var(--foreground));
+}
+
+.dark .tesla-button.secondary {
+  background-color: rgba(34, 34, 34, 0.65);
+  color: hsl(var(--foreground));
+}
+
+.tesla-button:hover {
+  transform: translateY(-2px);
+}
+
+.tesla-button.primary:hover {
+  background-color: hsl(210 100% 45%);
+}
+
+.tesla-button.secondary:hover {
+  background-color: rgba(244, 244, 244, 0.85);
+}
+
+.dark .tesla-button.secondary:hover {
+  background-color: rgba(34, 34, 34, 0.85);
+}
+
+/* Tesla-style Cards */
+.tesla-card {
+  @apply bg-white rounded-xl overflow-hidden shadow-md;
+  transition: all 0.3s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.dark .tesla-card {
+  @apply bg-card;
+}
+
+.tesla-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Tesla-style Section Layouts */
+.tesla-section {
+  @apply relative overflow-hidden py-16;
+}
+
+.tesla-section.hero {
+  @apply min-h-screen flex flex-col justify-between p-0;
+  background-color: transparent;
+}
+
+.tesla-container {
+  @apply max-w-screen-xl mx-auto px-6;
+}
+
+.tesla-headline {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.tesla-subheadline {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Clean, thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary));
+}
+
+/* Uganda culture patterns with Tesla minimalism */
+.uganda-pattern {
+  background-color: hsl(var(--background));
   background-image: 
-    radial-gradient(hsl(195, 90%, 85%, 0.15) 2px, transparent 2px),
-    radial-gradient(hsl(200, 80%, 85%, 0.15) 2px, transparent 2px);
+    radial-gradient(hsl(var(--primary) / 0.05) 2px, transparent 2px),
+    radial-gradient(hsl(var(--primary) / 0.05) 2px, transparent 2px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }
 
-.sky-texture {
-  background-color: hsl(210, 50%, 95%);
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='hsl(200, 80%, 70%)' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+.sky-accent {
+  @apply text-primary font-medium;
 }
 
-.button-hover-effect {
-  @apply transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg;
+/* Clean, minimal cards */
+.clean-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-sm transition-all;
+  box-shadow: var(--tesla-shadow);
 }
 
-.card-hover-effect {
-  @apply transition duration-300 ease-in-out hover:shadow-xl;
+.dark .clean-card {
+  @apply bg-card;
 }
 
-/* Custom styled scrollbar with sky blue theme */
-::-webkit-scrollbar {
-  width: 12px;
+.clean-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
-::-webkit-scrollbar-track {
-  background: hsl(210, 50%, 95%);
+/* Tour Card with Tesla-style hover effects */
+.tour-card {
+  @apply relative overflow-hidden transition-all;
+  box-shadow: var(--tesla-shadow);
 }
 
-::-webkit-scrollbar-thumb {
-  background: hsl(200, 80%, 50%);
-  border-radius: 6px;
+.tour-card:hover {
+  transform: translateY(-4px);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(200, 80%, 40%);
+.tour-card .tour-overlay {
+  @apply absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 transition-opacity;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
 }
 
 .tour-card:hover .tour-overlay {
-  opacity: 1;
+  @apply opacity-100;
 }
 
 /* Fix for iframe z-index and interaction */
@@ -152,7 +305,7 @@
   object-position: center;
 }
 
-/* Futuristic animations and styles */
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -164,28 +317,8 @@
   }
 }
 
-@keyframes pulse-glow {
-  0% {
-    box-shadow: var(--glow-blue);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(32, 156, 238, 0.8);
-  }
-  100% {
-    box-shadow: var(--glow-blue);
-  }
-}
-
-@keyframes border-pulse {
-  0% {
-    border-color: rgba(32, 156, 238, 0.3);
-  }
-  50% {
-    border-color: rgba(32, 156, 238, 0.8);
-  }
-  100% {
-    border-color: rgba(32, 156, 238, 0.3);
-  }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 @keyframes subtle-float {
@@ -200,286 +333,27 @@
   }
 }
 
-.futuristic-section {
-  position: relative;
-  background-image: var(--tech-pattern);
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.clean-background {
-  position: relative;
-  background-color: #f5f5f7; /* Apple-like light gray background */
-  color: #1d1d1f;
-  overflow: hidden;
-}
-
-.clean-background.dark {
-  background-color: #000;
-  color: #f5f5f7;
-}
-
-.clean-section {
-  padding: 3rem 0;
-}
-
-.clean-section.hero {
-  padding: 5rem 0;
-}
-
-.clean-card {
-  background-color: white;
-  border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.clean-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.subtle-accent {
-  color: #209CEE;
-  font-weight: 500;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  line-height: 1.1;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  color: #6e6e73;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-}
-
-.feature-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-}
-
-.feature-item {
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.feature-item h3 {
-  margin: 1rem 0 0.5rem;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.feature-icon {
-  margin-bottom: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #f5f5f7;
-}
-
-.clean-button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 500;
-  text-align: center;
-  transition: all 0.2s ease;
-  background-color: #209CEE;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.clean-button:hover {
-  background-color: #1d8dcf;
-  transform: translateY(-1px);
-}
-
-.clean-button.secondary {
-  background-color: transparent;
-  border: 1px solid #209CEE;
-  color: #209CEE;
-}
-
-.clean-button.secondary:hover {
-  background-color: rgba(32, 156, 238, 0.1);
-}
-
-.media-scroller {
-  display: grid;
-  gap: 1rem;
-  grid-auto-flow: column;
-  grid-auto-columns: 25%;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 1rem 0;
-  scrollbar-width: none;
-}
-
-.media-scroller::-webkit-scrollbar {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .media-scroller {
-    grid-auto-columns: 40%;
-  }
-}
-
-@media (max-width: 768px) {
-  .media-scroller {
-    grid-auto-columns: 70%;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .media-scroller {
-    grid-auto-columns: 90%;
-  }
-}
-
-.futuristic-card {
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(32, 156, 238, 0.3);
-  animation: border-pulse 4s infinite;
-  transition: all 0.3s ease;
-}
-
-.futuristic-card:hover {
-  box-shadow: var(--glow-blue);
-  transform: translateY(-5px);
-}
-
-.glow-text {
-  text-shadow: 0 0 5px rgba(32, 156, 238, 0.7);
-}
-
-.glow-border {
-  position: relative;
-}
-
-.glow-border::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px solid rgba(32, 156, 238, 0.5);
-  border-radius: inherit;
-  box-shadow: var(--glow-blue);
-  pointer-events: none;
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.timeline-item:nth-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-child(2) { animation-delay: 0.3s; }
-.timeline-item:nth-child(3) { animation-delay: 0.5s; }
-.timeline-item:nth-child(4) { animation-delay: 0.7s; }
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  background-color: #209CEE;
-  border-radius: 50%;
-  box-shadow: var(--glow-blue);
-  z-index: 1;
-}
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  left: 0.5rem;
-  top: 1.5rem;
-  bottom: -1rem;
-  width: 1px;
-  background: linear-gradient(to bottom, #209CEE, transparent);
-  transform: translateX(-50%);
-}
-
-.timeline-item:last-child::after {
-  display: none;
-}
-
 .floating-element {
   animation: subtle-float 4s ease-in-out infinite;
 }
 
-/* Make tour cards more futuristic */
-.tour-card {
-  transition: all 0.4s ease;
-  overflow: hidden;
-  position: relative;
+/* Language Selector */
+.tesla-language-selector {
+  @apply relative inline-block text-sm font-medium mx-4;
 }
 
-.tour-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--glow-blue);
+.tesla-language-selector select {
+  @apply appearance-none bg-transparent border-none py-2 pl-2 pr-6 cursor-pointer;
+  color: hsl(var(--foreground));
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-.tour-card::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, transparent, rgba(32, 156, 238, 0.3), transparent);
-  z-index: -1;
-  transform: rotate(0deg) scale(0.95);
-  transition: all 0.6s ease;
-  opacity: 0;
-  border-radius: 0.5rem;
-}
-
-.tour-card:hover::before {
-  opacity: 1;
-  transform: rotate(180deg) scale(1.05);
-}
-
-/* Timeline display for museum history */
-.time-marker {
-  position: relative;
-  font-family: 'Courier New', monospace;
-  color: #209CEE;
-  font-weight: bold;
-  padding-left: 0.5rem;
-  line-height: 1;
-  margin-bottom: 0.25rem;
-  font-size: 0.75rem;
-  opacity: 0.8;
-}
-
-.time-marker::before {
-  content: '>';
-  position: absolute;
-  left: 0;
-  color: #209CEE;
+.tesla-language-selector::after {
+  content: "";
+  @apply absolute top-1/2 right-1 transform -translate-y-1/2 pointer-events-none;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: hsl(var(--foreground)) transparent transparent transparent;
 }

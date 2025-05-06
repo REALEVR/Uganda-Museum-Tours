@@ -1,0 +1,133 @@
+{
+  "common": {
+    "home": "Ewaka",
+    "museums": "Amayumba g'ebintu eby'edda",
+    "pricing": "Emiwendo",
+    "login": "Yingira",
+    "register": "Wewandiise",
+    "logout": "Fuluma",
+    "account": "Akawunti Yange",
+    "dashboard": "Okulambula",
+    "language": "Olulimi"
+  },
+  "home": {
+    "hero": {
+      "title": "Okulambula amayumba ga Yuganda mu ntangaala",
+      "subtitle": "Zuula amayumba g'ebintu eby'edda aga Yuganda n'obuwangwa okuva wonna mu nsi",
+      "cta": "Tandika Okuzuula"
+    },
+    "features": {
+      "title": "Goberera Obuwangwa bwa Yuganda Obugagga",
+      "subtitle": "Manya emboozi n'ebintu ebyatondawo ebyafaayo by'Afrika ey'Ebuvanjuba",
+      "feature1": {
+        "title": "Okulambula mu 360° okw'omunda",
+        "description": "Yingira mu bifo eby'ebyafaayo ebisinga obukulu mu Yuganda n'endabika yonna"
+      },
+      "feature2": {
+        "title": "Ensulo y'Obuwangwa",
+        "description": "Yiga ku bintu n'amawulire amalambulukufu okuva eri abakungu abakugu"
+      },
+      "feature3": {
+        "title": "Ebyafaayo Ebituukikika",
+        "description": "Lambula amayumba g'e Yuganda okuva wonna mu nsi, ku kyuma kyonna"
+      }
+    },
+    "museums": {
+      "title": "Amayumba g'Ebintu Agalondeddwa",
+      "viewAll": "Laba Amayumba gonna",
+      "learnMore": "Yiga Ebisingawo"
+    },
+    "pricing": {
+      "title": "Ebipaliso by'Okulambula mu Ntangaala",
+      "singlePass": "Ekipande ky'Eyumba emu",
+      "bundlePass": "Ekibindo ky'Amayumba ag'Ekitangaazi",
+      "allAccess": "Ekipande ky'Amayumba gonna",
+      "days": "ennaku",
+      "perMuseum": "buli yumba",
+      "allMuseums": "amayumba gonna",
+      "buyNow": "Gula Kati",
+      "learnMore": "Yiga Ebisingawo"
+    }
+  },
+  "museums": {
+    "title": "Amayumba gaffe",
+    "subtitle": "Zuula ebitongole eby'obuwangwa ebya Yuganda ebyenjawulo",
+    "filter": "Sengejja",
+    "sortBy": "Teeka mu nteeko",
+    "duration": "Obudde",
+    "price": "Omuwendo",
+    "rating": "Okugera",
+    "viewDetails": "Laba Ebikwata",
+    "startTour": "Tandika Okulambula",
+    "minutes": "eddakiika"
+  },
+  "museumDetail": {
+    "virtualTour": "Okulambula Eyumba mu Ntangaala",
+    "about": "Ebikwata ku Yumba eno",
+    "culturalSignificance": "Omugaso gw'Obuwangwa",
+    "artifacts": "Ebintu Ebiragiddwa",
+    "culturalElements": "Ebikola Obuwangwa",
+    "tourFeatures": "Ebirambika Okulambula",
+    "tourTechnology": "Tekinilogiya ey'Okulambula",
+    "viewing": "Okulaba mu 360°",
+    "viewingDesc": "Okuddamu okukolawo konna okuyingiza mu bbanga ery'ebyafaayo",
+    "info": "Ebikwata ku Bintu",
+    "infoDesc": "Ebifo by'amawulire ebikolagana n'ensibuko y'ebyafaayo",
+    "content": "Ebikwata ku Buwangwa",
+    "contentDesc": "Ebikwata ku buwangwa bwa Yuganda n'emboozi ez'amazima",
+    "platform": "Ku Byuma byonna",
+    "platformDesc": "Bikola ku byuma byonna nga tewali puloguramu zizingiddwako",
+    "duration": "Obudde bw'Okulambula: Kumpi eddakiika {{duration}}",
+    "accessPeriod": "Ebbanga ly'Okuyingira: Ennaku 30 okuva ku kugula",
+    "tourPass": "Ekipande ky'Okulambula mu Ntangaala",
+    "rating": "Okugera",
+    "minTour": "eddakiika ex'okulambula",
+    "dayAccess": "Ennaku 30 ez'okutuuka ku kulambula mu ntangaala",
+    "includes": "Okulambula Kwo Kulimu:",
+    "reconstruction": "Okuddamu okukolawo konna okwa 360° okwa {{name}}",
+    "technology": "Tekinilogiya ya RealEVR ey'okulaba nga ekolagana",
+    "database": "Ebikwata ebijjuvu ku bintu by'ebyafaayo n'ensulo",
+    "devices": "Enkumi ku byuma byo byonna",
+    "alreadyAccess": "Omaze okutuuka ku kulambula kuno",
+    "startTour": "Tandika Okulambula mu Ntangaala",
+    "buyTour": "Gula Okulambula mu Ntangaala",
+    "secure": "Enkola eya yingiza ssente ewekeddwa",
+    "saveBundle": "Tereka n'Ekibindo",
+    "bundleDesc": "Funa enkumi ku mayumba gonna abiri ag'ekitangaazi n'ekipande kyaffe",
+    "pioneering": "Ekipande ky'Amayumba ag'Ekitangaazi",
+    "save": "era tereka 30%",
+    "learnMore": "Yiga Ebisingawo",
+    "preview": "Okugezesa Amangu"
+  },
+  "auth": {
+    "login": {
+      "title": "Yingira",
+      "username": "Erinnya ly'Omukozesa",
+      "password": "Ekigambo Ekikuumi",
+      "rememberMe": "Nzijukira",
+      "forgotPassword": "Werabidde ekigambo ekikuumi?",
+      "submit": "Yingira",
+      "noAccount": "Tolina akawunti?",
+      "signUp": "Wewandiise"
+    },
+    "register": {
+      "title": "Kolawo Akawunti",
+      "name": "Erinnya Lyonna",
+      "email": "Imeyiro",
+      "username": "Erinnya ly'Omukozesa",
+      "password": "Ekigambo Ekikuumi",
+      "confirmPassword": "Kakasa Ekigambo Ekikuumi",
+      "terms": "Nzikiriza Emiteeko n'Obukwakkulizo",
+      "submit": "Kolawo Akawunti",
+      "hasAccount": "Omaze okubeera n'akawunti?",
+      "signIn": "Yingira"
+    }
+  },
+  "errors": {
+    "notFound": "Olupapula terulabise",
+    "backHome": "Ddayo Ewaka",
+    "serverError": "Kiremya mu sevva",
+    "tryAgain": "Nsaba ogezzeeko oluvannyuma",
+    "unauthorized": "Olina okuyingira okutuuka ku lupapula luno"
+  }
+}

@@ -3,10 +3,10 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Import translations
-import enTranslation from '@/locales/en.json';
-import swTranslation from '@/locales/sw.json';
-import frTranslation from '@/locales/fr.json';
-import luTranslation from '@/locales/lu.json';
+import enTranslation from '../locales/en.json';
+import swTranslation from '../locales/sw.json';
+import frTranslation from '../locales/fr.json';
+import luTranslation from '../locales/lu.json';
 
 // Set up i18next with all plugins
 i18n

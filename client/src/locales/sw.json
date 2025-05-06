@@ -1,0 +1,133 @@
+{
+  "common": {
+    "home": "Nyumbani",
+    "museums": "Makumbusho",
+    "pricing": "Bei",
+    "login": "Ingia",
+    "register": "Jisajili",
+    "logout": "Toka",
+    "account": "Akaunti Yangu",
+    "dashboard": "Dashibodi",
+    "language": "Lugha"
+  },
+  "home": {
+    "hero": {
+      "title": "Ziara za Makumbusho ya Uganda",
+      "subtitle": "Chunguza makumbusho ya Uganda na urithi wa kitamaduni kutoka mahali popote duniani",
+      "cta": "Anza Kuchunguza"
+    },
+    "features": {
+      "title": "Pata Urithi wa Kitamaduni wa Uganda",
+      "subtitle": "Gundua hadithi na vitu vya kale vilivyounda historia ya Afrika Mashariki",
+      "feature1": {
+        "title": "Ziara za 360° za Kujitosa",
+        "description": "Ingia ndani ya maeneo muhimu zaidi ya kihistoria ya Uganda kwa maoni ya panorama kamili"
+      },
+      "feature2": {
+        "title": "Muktadha wa Kitamaduni",
+        "description": "Jifunze kuhusu vitu vya kale kwa maelezo ya kina kutoka kwa wataalamu wasimamizi"
+      },
+      "feature3": {
+        "title": "Historia Inayopatikana",
+        "description": "Pata uzoefu wa makumbusho ya Uganda kutoka mahali popote duniani, kwenye kifaa chochote"
+      }
+    },
+    "museums": {
+      "title": "Makumbusho Yaliyoangaziwa",
+      "viewAll": "Tazama Makumbusho Yote",
+      "learnMore": "Jifunze Zaidi"
+    },
+    "pricing": {
+      "title": "Pasi za Ziara za Mtandaoni",
+      "singlePass": "Pasi ya Makumbusho Moja",
+      "bundlePass": "Furushi la Makumbusho ya Mwanzo",
+      "allAccess": "Pasi ya Makumbusho Yote",
+      "days": "siku",
+      "perMuseum": "kwa makumbusho",
+      "allMuseums": "makumbusho yote",
+      "buyNow": "Nunua Sasa",
+      "learnMore": "Jifunze Zaidi"
+    }
+  },
+  "museums": {
+    "title": "Makumbusho Yetu",
+    "subtitle": "Chunguza taasisi mbalimbali za kitamaduni za Uganda",
+    "filter": "Chuja",
+    "sortBy": "Panga kwa",
+    "duration": "Muda",
+    "price": "Bei",
+    "rating": "Tathmini",
+    "viewDetails": "Tazama Maelezo",
+    "startTour": "Anza Ziara",
+    "minutes": "dakika"
+  },
+  "museumDetail": {
+    "virtualTour": "Ziara ya Makumbusho Mtandaoni",
+    "about": "Kuhusu Makumbusho Haya",
+    "culturalSignificance": "Umuhimu wa Kitamaduni",
+    "artifacts": "Vitu vya Kale Vilivyoangaziwa",
+    "culturalElements": "Vipengele vya Kitamaduni",
+    "tourFeatures": "Vipengele vya Uzoefu",
+    "tourTechnology": "Teknolojia ya Ziara",
+    "viewing": "Kutazama 360°",
+    "viewingDesc": "Ujenzi upya wa kujitosa kamili wa maeneo ya kihistoria",
+    "info": "Taarifa za Vitu vya Kale",
+    "infoDesc": "Nodi za taarifa zinazotumika zenye muktadha wa kihistoria",
+    "content": "Maudhui ya Kitamaduni",
+    "contentDesc": "Data halisi ya kitamaduni ya Uganda na masimulizi",
+    "platform": "Mfumo wowote",
+    "platformDesc": "Inafanya kazi kwenye vifaa vyote bila programu za ziada",
+    "duration": "Muda wa Ziara: Takriban dakika {{duration}}",
+    "accessPeriod": "Kipindi cha Upatikanaji: Siku 30 kutoka kununua",
+    "tourPass": "Pasi ya Ziara Mtandaoni",
+    "rating": "Tathmini",
+    "minTour": "ziara ya dakika",
+    "dayAccess": "Upatikanaji wa siku 30 kwa ziara mtandaoni",
+    "includes": "Ziara Yako Inajumuisha:",
+    "reconstruction": "Ujenzi upya kamili wa 360° wa {{name}}",
+    "technology": "Teknolojia ya kutazama ya RealEVR inayotumika",
+    "database": "Hifadhidata kamili ya vitu vya kale na muktadha wa kihistoria",
+    "devices": "Upatikanaji kwenye vifaa vyako vyote",
+    "alreadyAccess": "Tayari una upatikanaji wa ziara hii",
+    "startTour": "Anza Ziara Mtandaoni",
+    "buyTour": "Nunua Ziara Mtandaoni",
+    "secure": "Mchakato wa malipo salama",
+    "saveBundle": "Okoa na Furushi",
+    "bundleDesc": "Pata upatikanaji wa makumbusho yote mawili ya mwanzo kwa",
+    "pioneering": "Pasi ya Makumbusho ya Mwanzo",
+    "save": "na okoa 30%",
+    "learnMore": "Jifunze Zaidi",
+    "preview": "Hakikisho Mubashara"
+  },
+  "auth": {
+    "login": {
+      "title": "Ingia",
+      "username": "Jina la Mtumiaji",
+      "password": "Neno la Siri",
+      "rememberMe": "Nikumbuke",
+      "forgotPassword": "Umesahau neno la siri?",
+      "submit": "Ingia",
+      "noAccount": "Huna akaunti?",
+      "signUp": "Jisajili"
+    },
+    "register": {
+      "title": "Unda Akaunti",
+      "name": "Jina Kamili",
+      "email": "Barua Pepe",
+      "username": "Jina la Mtumiaji",
+      "password": "Neno la Siri",
+      "confirmPassword": "Thibitisha Neno la Siri",
+      "terms": "Ninakubali Sheria na Masharti",
+      "submit": "Unda Akaunti",
+      "hasAccount": "Tayari una akaunti?",
+      "signIn": "Ingia"
+    }
+  },
+  "errors": {
+    "notFound": "Ukurasa haujapatikana",
+    "backHome": "Rudi Nyumbani",
+    "serverError": "Hitilafu ya seva",
+    "tryAgain": "Tafadhali jaribu tena baadaye",
+    "unauthorized": "Unahitaji kuingia ili kupata ukurasa huu"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "common": {
+    "home": "Accueil",
+    "museums": "Musées",
+    "pricing": "Tarifs",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "account": "Mon Compte",
+    "dashboard": "Tableau de Bord",
+    "language": "Langue"
+  },
+  "home": {
+    "hero": {
+      "title": "Visites Virtuelles d'Ouganda",
+      "subtitle": "Explorez les musées ougandais et le patrimoine culturel depuis n'importe où dans le monde",
+      "cta": "Commencer l'Exploration"
+    },
+    "features": {
+      "title": "Découvrez le Riche Patrimoine Culturel de l'Ouganda",
+      "subtitle": "Découvrez les histoires et les artefacts qui ont façonné l'histoire de l'Afrique de l'Est",
+      "feature1": {
+        "title": "Visites Immersives à 360°",
+        "description": "Entrez dans les sites historiques les plus importants de l'Ouganda avec des vues panoramiques complètes"
+      },
+      "feature2": {
+        "title": "Contexte Culturel",
+        "description": "Apprenez sur les artefacts avec des informations détaillées de conservateurs experts"
+      },
+      "feature3": {
+        "title": "Histoire Accessible",
+        "description": "Expérimentez les musées ougandais de n'importe où dans le monde, sur n'importe quel appareil"
+      }
+    },
+    "museums": {
+      "title": "Musées en Vedette",
+      "viewAll": "Voir Tous les Musées",
+      "learnMore": "En Savoir Plus"
+    },
+    "pricing": {
+      "title": "Passes de Visite Virtuelle",
+      "singlePass": "Passe pour un Seul Musée",
+      "bundlePass": "Forfait Musées Pionniers",
+      "allAccess": "Passe Accès Complet",
+      "days": "jours",
+      "perMuseum": "par musée",
+      "allMuseums": "tous les musées",
+      "buyNow": "Acheter Maintenant",
+      "learnMore": "En Savoir Plus"
+    }
+  },
+  "museums": {
+    "title": "Nos Musées",
+    "subtitle": "Explorez les diverses institutions culturelles de l'Ouganda",
+    "filter": "Filtrer",
+    "sortBy": "Trier par",
+    "duration": "Durée",
+    "price": "Prix",
+    "rating": "Évaluation",
+    "viewDetails": "Voir les Détails",
+    "startTour": "Commencer la Visite",
+    "minutes": "minutes"
+  },
+  "museumDetail": {
+    "virtualTour": "Visite Virtuelle du Musée",
+    "about": "À Propos de ce Musée",
+    "culturalSignificance": "Importance Culturelle",
+    "artifacts": "Artefacts Vedettes",
+    "culturalElements": "Éléments Culturels",
+    "tourFeatures": "Caractéristiques de l'Expérience",
+    "tourTechnology": "Technologie de Visite",
+    "viewing": "Visualisation 360°",
+    "viewingDesc": "Reconstruction immersive complète des espaces historiques",
+    "info": "Informations sur les Artefacts",
+    "infoDesc": "Nœuds d'information interactifs avec contexte historique",
+    "content": "Contenu Culturel",
+    "contentDesc": "Données culturelles ougandaises authentiques et récits",
+    "platform": "Multi-Plateforme",
+    "platformDesc": "Fonctionne sur tous les appareils sans logiciel supplémentaire",
+    "duration": "Durée de la Visite: Environ {{duration}} minutes",
+    "accessPeriod": "Période d'Accès: 30 jours à partir de l'achat",
+    "tourPass": "Passe de Visite Virtuelle",
+    "rating": "Évaluation",
+    "minTour": "visite de min",
+    "dayAccess": "Accès de 30 jours à la visite virtuelle",
+    "includes": "Votre Visite Comprend:",
+    "reconstruction": "Reconstruction virtuelle complète à 360° de {{name}}",
+    "technology": "Technologie de visualisation interactive RealEVR",
+    "database": "Base de données complète d'artefacts avec contexte historique",
+    "devices": "Accès sur tous vos appareils",
+    "alreadyAccess": "Vous avez déjà accès à cette visite",
+    "startTour": "Commencer la Visite Virtuelle",
+    "buyTour": "Acheter la Visite Virtuelle",
+    "secure": "Traitement sécurisé des paiements",
+    "saveBundle": "Économisez avec un Forfait",
+    "bundleDesc": "Obtenez accès aux deux musées pionniers avec notre",
+    "pioneering": "Passe Musées Pionniers",
+    "save": "et économisez 30%",
+    "learnMore": "En Savoir Plus",
+    "preview": "Aperçu en Direct"
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié?",
+      "submit": "Se Connecter",
+      "noAccount": "Vous n'avez pas de compte?",
+      "signUp": "S'inscrire"
+    },
+    "register": {
+      "title": "Créer un Compte",
+      "name": "Nom Complet",
+      "email": "Email",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le Mot de passe",
+      "terms": "J'accepte les Conditions Générales",
+      "submit": "Créer un Compte",
+      "hasAccount": "Vous avez déjà un compte?",
+      "signIn": "Se Connecter"
+    }
+  },
+  "errors": {
+    "notFound": "Page non trouvée",
+    "backHome": "Retour à l'Accueil",
+    "serverError": "Erreur serveur",
+    "tryAgain": "Veuillez réessayer plus tard",
+    "unauthorized": "Vous devez être connecté pour accéder à cette page"
+  }
+}
