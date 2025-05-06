@@ -37,27 +37,19 @@ const Header = () => {
         
         {/* Navigation - Desktop */}
         <nav className="hidden md:flex items-center">
-  <div className="flex items-center space-x-1">
-    {navLinks.map((link) => (
-      <Link key={link.path} href={link.path}>
-        <div className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
-          location === link.path 
-            ? 'text-primary bg-primary/10' 
-            : 'text-primary/70 hover:text-primary hover:bg-primary/5'
-        }`}>
-          {link.name}
-        </div>
-      </Link>
-    ))}
-  </div>
-</nav>
-          {navLinks.map((link) => (
-            <Link key={link.path} href={link.path}>
-              <div className={`font-medium hover:text-primary transition cursor-pointer ${location === link.path ? 'text-primary' : 'text-primary/80'}`}>
-                {link.name}
-              </div>
-            </Link>
-          ))}
+          <div className="flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <Link key={link.path} href={link.path}>
+                <div className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  location === link.path 
+                    ? 'text-primary bg-primary/10' 
+                    : 'text-primary/70 hover:text-primary hover:bg-primary/5'
+                }`}>
+                  {link.name}
+                </div>
+              </Link>
+            ))}
+          </div>
         </nav>
         
         {/* User Actions */}
