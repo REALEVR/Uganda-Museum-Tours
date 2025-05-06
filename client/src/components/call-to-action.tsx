@@ -6,10 +6,10 @@ const CallToAction = () => {
     <section className="py-16 bg-primary/90 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-heading font-bold text-3xl mb-6 max-w-2xl mx-auto">
-          Begin Your Cultural Journey Through Uganda's Museums Today
+          Experience Ugandan Museums From Anywhere in the World
         </h2>
         <p className="max-w-2xl mx-auto mb-8 text-white/80">
-          Join thousands of visitors exploring Uganda's rich cultural heritage from anywhere in the world
+          Discover authentic cultural experiences through our virtual tours featuring Ssemagulu Museum and Museum of Technology
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link href="/museums">

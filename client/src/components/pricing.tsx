@@ -4,50 +4,50 @@ import { Button } from "@/components/ui/button";
 const Pricing = () => {
   const pricingPlans = [
     {
-      title: "Individual Tours",
-      subtitle: "Access any single museum tour",
+      title: "Single Museum Tour",
+      subtitle: "Access one virtual museum",
       price: "$4.99",
       unit: "per tour",
       features: [
-        "Full access to one museum tour",
-        "Interactive exhibits and information",
-        "Access for 30 days",
-        "Mobile and desktop compatibility",
+        "Full access to one virtual museum tour",
+        "Interactive 360° exploration of exhibits",
+        "30 days of unlimited viewing",
+        "Works on any device - mobile, tablet, desktop",
       ],
-      cta: "Select Tour",
+      cta: "Choose a Museum",
       link: "/museums",
       highlight: false,
     },
     {
-      title: "Museum Bundle",
-      subtitle: "Access to any 3 museum tours",
-      price: "$12.99",
+      title: "Pioneering Museums Pass",
+      subtitle: "Experience our featured museums",
+      price: "$8.99",
       unit: "bundle",
       features: [
-        "Full access to 3 museum tours",
-        "Save over 15% compared to individual tours",
-        "Access for 60 days",
-        "Mobile and desktop compatibility",
-        "Downloadable tour guides",
+        "Access to Ssemagulu Museum virtual tour",
+        "Access to Museum of Technology virtual tour",
+        "Save 30% compared to buying separately",
+        "60 days of unlimited viewing",
+        "Exclusive behind-the-scenes content",
       ],
-      cta: "Select Bundle",
+      cta: "Get Featured Museums",
       link: "/checkout/bundle/1",
       highlight: true,
-      badge: "MOST POPULAR",
+      badge: "FEATURED",
     },
     {
       title: "All Access Pass",
-      subtitle: "Unlimited access to all museums",
+      subtitle: "Explore all Uganda museums",
       price: "$24.99",
-      unit: "90 days",
+      unit: "all museums",
       features: [
-        "Full access to all museums (5+)",
-        "Best value for cultural enthusiasts",
-        "Access for 90 days",
-        "Mobile and desktop compatibility",
-        "Downloadable content & guides",
+        "Unlimited access to all 7+ virtual museums",
+        "Best value for complete cultural experience",
+        "90 days of unlimited viewing",
+        "Priority access to new museum additions",
+        "Downloadable cultural guides & certificates",
       ],
-      cta: "Get All Access",
+      cta: "Get Complete Access",
       link: "/checkout/bundle/2",
       highlight: false,
     },
@@ -56,9 +56,9 @@ const Pricing = () => {
   return (
     <section id="pricing" className="py-16 container mx-auto px-4">
       <div className="text-center mb-12">
-        <h2 className="font-heading font-bold text-3xl mb-3">Simple, Affordable Pricing</h2>
+        <h2 className="font-heading font-bold text-3xl mb-3">Virtual Tour Pricing Options</h2>
         <p className="text-primary/80 max-w-2xl mx-auto">
-          Pay only for the tours you want to experience, with no subscription required
+          Choose the perfect option to explore Uganda's museums with our featured Ssemagulu Museum and Museum of Technology tours
         </p>
       </div>
 
@@ -118,16 +118,16 @@ const Pricing = () => {
       </div>
 
       <div className="mt-12 bg-neutral/50 rounded-lg p-6 max-w-3xl mx-auto text-center">
-        <h3 className="font-heading font-medium text-lg mb-2">Group & Educational Discounts</h3>
+        <h3 className="font-heading font-medium text-lg mb-2">Educational & Group Virtual Tours</h3>
         <p className="text-primary/80 mb-4">
-          Special rates available for schools, universities, and groups of 10+ visitors
+          Bring Ugandan culture to your classroom or organization with special rates for schools and groups of 10+ viewers
         </p>
         <Link href="/#contact">
           <Button 
             variant="outline" 
             className="px-6 py-2 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition"
           >
-            Contact for Group Rates
+            Get Group Access
           </Button>
         </Link>
       </div>

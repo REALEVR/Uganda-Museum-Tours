@@ -5,23 +5,23 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: "ri-user-add-line",
-      title: "Create Account",
-      description: "Sign up for your free account to access preview content and purchase tours",
+      title: "Sign Up for Free",
+      description: "Create your free account in seconds - no credit card required to view preview content",
     },
     {
       icon: "ri-search-eye-line",
-      title: "Explore Museums",
-      description: "Browse our collection of virtual tours and preview available experiences",
+      title: "Browse Virtual Museums",
+      description: "Explore our featured tours including Ssemagulu Museum and Museum of Technology",
     },
     {
       icon: "ri-secure-payment-line",
-      title: "Purchase Access",
-      description: "Pay a small fee to unlock full access to your selected museum tours",
+      title: "Buy Single Tour or Pass",
+      description: "Choose a single museum tour or save with our Pioneering Museums Pass",
     },
     {
       icon: "ri-360-view-line",
-      title: "Enjoy Tour",
-      description: "Experience immersive virtual tours with interactive exhibits and information",
+      title: "Start Your Virtual Visit",
+      description: "Instantly access full 360° tours with detailed information on cultural exhibits",
     },
   ];
 
@@ -29,9 +29,9 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-16 bg-accent/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl mb-3">How It Works</h2>
+          <h2 className="font-heading font-bold text-3xl mb-3">How Our Virtual Tours Work</h2>
           <p className="text-primary/80 max-w-2xl mx-auto">
-            Get started with your virtual museum experience in just a few simple steps
+            Experience Uganda's museums from anywhere in the world with our simple 4-step process
           </p>
         </div>
 
