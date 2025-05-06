@@ -133,3 +133,12 @@
   background: hsl(200, 80%, 40%);
 }
 
+.tour-card:hover .tour-overlay {
+  opacity: 1;
+}
+
+/* Fix for iframe z-index and interaction */
+.tour-card iframe {
+  pointer-events: none; /* Prevent iframe from capturing clicks when in card */
+}
+

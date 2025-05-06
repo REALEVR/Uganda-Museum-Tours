@@ -19,11 +19,23 @@ const MuseumCard = ({ museum, onPreviewClick }: MuseumCardProps) => {
   return (
     <div className="tour-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
       <div className="relative h-56 overflow-hidden">
-        <img 
-          src={imageUrl} 
-          alt={name} 
-          className="w-full h-full object-cover"
-        />
+        {museum.panellumUrl.includes('realevr.com') ? (
+          <div className="w-full h-full">
+            <iframe 
+              src={museum.panellumUrl} 
+              title={name}
+              className="w-full h-full border-0"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute top-0 left-0 right-0 bottom-0" onClick={onPreviewClick}></div>
+          </div>
+        ) : (
+          <img 
+            src={imageUrl} 
+            alt={name} 
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="tour-overlay absolute inset-0 bg-primary/70 opacity-0 transition-opacity flex items-center justify-center">
           <Button 
             variant="outline" 
