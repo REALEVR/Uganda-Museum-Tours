@@ -17,7 +17,7 @@ const MuseumCard = ({ museum, onPreviewClick }: MuseumCardProps) => {
   const formattedRating = rating ? (rating / 10).toFixed(1) : "N/A";
 
   return (
-    <div className="tour-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+    <div className="tour-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
       <div className="relative h-56 overflow-hidden">
         {museum.panellumUrl.includes('realevr.com') ? (
           <div className="w-full h-full">

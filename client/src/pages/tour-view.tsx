@@ -16,25 +16,25 @@ const TourView = () => {
   const { user, isAuthenticated } = useAuth();
   const [isTourLoaded, setIsTourLoaded] = useState(false);
   const [viewer, setViewer] = useState<PannellumViewer | null>(null);
-  
+
   // Get museum details
   const { data: museum, isLoading: museumLoading } = useQuery<Museum>({
     queryKey: [`/api/museums/${museumId}`],
     enabled: !!museumId,
   });
-  
+
   // Check user access to museum
   const { data: accessData, isLoading: accessLoading } = useQuery<{ hasAccess: boolean }>({
     queryKey: [`/api/museums/${museumId}/access`],
     enabled: !!museumId && isAuthenticated,
   });
-  
+
   const hasAccess = accessData?.hasAccess || false;
   const isLoading = museumLoading || accessLoading;
-  
+
   // Define hotspots for the tour
   const [hotspots, setHotspots] = useState<PannellumHotSpot[]>([]);
-  
+
   useEffect(() => {
     if (museum) {
       // Example hotspots - in a real app, these would come from the backend
@@ -60,25 +60,31 @@ const TourView = () => {
           }
         }
       ];
-      
+
       setHotspots(demoHotspots);
     }
   }, [museum]);
-  
+
   // Handle tour loaded
   const handleTourLoaded = (viewerInstance: PannellumViewer) => {
     setViewer(viewerInstance);
     setIsTourLoaded(true);
   };
-  
+
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-primary/5 to-background">
+        <div className="relative w-16 h-16">
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <i className="ri-gallery-line text-primary/50 text-xl"></i>
+          </div>
+        </div>
+        <p className="mt-4 text-primary/70 animate-pulse">Loading virtual tour...</p>
       </div>
     );
   }
-  
+
   if (!museum) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
@@ -90,7 +96,7 @@ const TourView = () => {
       </div>
     );
   }
-  
+
   if (!isAuthenticated) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
@@ -102,7 +108,7 @@ const TourView = () => {
       </div>
     );
   }
-  
+
   if (!hasAccess) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
@@ -119,7 +125,7 @@ const TourView = () => {
       </div>
     );
   }
-  
+
   return (
     <div className="bg-black min-h-screen pb-8">
       <div className="container mx-auto px-4 py-4">
@@ -136,7 +142,7 @@ const TourView = () => {
             </Link>
           </div>
         </div>
-        
+
         {/* Tour Viewer Section */}
         <div className="bg-dark rounded-lg overflow-hidden shadow-xl">
           {museum.panellumUrl.includes('realevr.com') ? (
@@ -162,7 +168,7 @@ const TourView = () => {
             />
           )}
         </div>
-        
+
         {/* Tour Information and Controls */}
         <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
           <div className="flex flex-col md:flex-row gap-8">
@@ -174,7 +180,7 @@ const TourView = () => {
                 scroll to zoom in and out. Click on hotspots <i className="ri-focus-2-line text-primary"></i> 
                 throughout the tour to learn more about specific exhibits and artifacts.
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
                 <div className="bg-neutral/30 p-4 rounded-lg text-center">
                   <i className="ri-drag-move-line text-2xl text-primary mb-2"></i>
@@ -214,7 +220,7 @@ const TourView = () => {
                     <span>Interactive Information Points</span>
                   </li>
                 </ul>
-                
+
                 <div className="mt-6">
                   <h4 className="font-medium mb-2">Need help?</h4>
                   <p className="text-sm text-dark/70 mb-4">

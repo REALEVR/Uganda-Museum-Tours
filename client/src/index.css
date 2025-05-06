@@ -4,32 +4,33 @@
 
 /* White and Sky Blue theme */
 :root {
-  /* White base */
-  --background: 0 0% 100%;
+  /* White base with subtle blue tint */
+  --background: 210 30% 100%;
   --foreground: 210 50% 15%;
   --muted: 210 40% 96%;
   --muted-foreground: 210 30% 45%;
-  --popover: 0 0% 100%;
+  --popover: 210 30% 100%;
   --popover-foreground: 210 50% 15%;
-  --card: 0 0% 100%;
+  --card: 210 30% 100%;
   --card-foreground: 210 50% 15%;
   --border: 210 20% 90%;
   --input: 210 20% 90%;
-  /* Sky Blue - Primary */
-  --primary: 200 80% 50%;
+  /* Vibrant Blue - Primary */
+  --primary: 210 100% 50%;
   --primary-foreground: 0 0% 100%;
-  /* Lighter Blue - Secondary */
-  --secondary: 195 90% 65%; 
+  /* Ocean Blue - Secondary */
+  --secondary: 195 90% 60%;
   --secondary-foreground: 210 50% 15%;
-  /* Very Light Blue - Accent */
-  --accent: 210 40% 95%;
+  /* Soft Blue - Accent */
+  --accent: 200 90% 95%;
   --accent-foreground: 210 50% 15%;
-  --destructive: 260 95% 60%;
+  /* Purple for Destructive */
+  --destructive: 280 90% 50%;
   --destructive-foreground: 0 0% 100%;
-  /* Success color */
-  --success: 160 80% 40%;
+  /* Emerald for Success */
+  --success: 145 80% 45%;
   --success-foreground: 0 0% 100%;
-  --ring: 200 80% 50%;
+  --ring: 210 100% 50%;
   --radius: 0.5rem;
 }
 
