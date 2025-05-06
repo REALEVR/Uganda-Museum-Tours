@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* White and Sky Blue theme */
+/* White and Sky Blue theme with Futuristic Elements */
 :root {
   /* White base with subtle blue tint */
   --background: 210 30% 100%;
@@ -32,6 +32,11 @@
   --success-foreground: 0 0% 100%;
   --ring: 210 100% 50%;
   --radius: 0.5rem;
+  
+  /* Futuristic UI Variables */
+  --glow-blue: 0 0 8px rgba(32, 156, 238, 0.7);
+  --glow-purple: 0 0 8px rgba(126, 34, 206, 0.7);
+  --tech-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23209cee' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark {
@@ -147,3 +152,186 @@
   object-position: center;
 }
 
+/* Futuristic animations and styles */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: var(--glow-blue);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(32, 156, 238, 0.8);
+  }
+  100% {
+    box-shadow: var(--glow-blue);
+  }
+}
+
+@keyframes border-pulse {
+  0% {
+    border-color: rgba(32, 156, 238, 0.3);
+  }
+  50% {
+    border-color: rgba(32, 156, 238, 0.8);
+  }
+  100% {
+    border-color: rgba(32, 156, 238, 0.3);
+  }
+}
+
+@keyframes subtle-float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.futuristic-section {
+  position: relative;
+  background-image: var(--tech-pattern);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.futuristic-card {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(32, 156, 238, 0.3);
+  animation: border-pulse 4s infinite;
+  transition: all 0.3s ease;
+}
+
+.futuristic-card:hover {
+  box-shadow: var(--glow-blue);
+  transform: translateY(-5px);
+}
+
+.glow-text {
+  text-shadow: 0 0 5px rgba(32, 156, 238, 0.7);
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(32, 156, 238, 0.5);
+  border-radius: inherit;
+  box-shadow: var(--glow-blue);
+  pointer-events: none;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  background-color: #209CEE;
+  border-radius: 50%;
+  box-shadow: var(--glow-blue);
+  z-index: 1;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 1.5rem;
+  bottom: -1rem;
+  width: 1px;
+  background: linear-gradient(to bottom, #209CEE, transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.floating-element {
+  animation: subtle-float 4s ease-in-out infinite;
+}
+
+/* Make tour cards more futuristic */
+.tour-card {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-blue);
+}
+
+.tour-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(32, 156, 238, 0.3), transparent);
+  z-index: -1;
+  transform: rotate(0deg) scale(0.95);
+  transition: all 0.6s ease;
+  opacity: 0;
+  border-radius: 0.5rem;
+}
+
+.tour-card:hover::before {
+  opacity: 1;
+  transform: rotate(180deg) scale(1.05);
+}
+
+/* Timeline display for museum history */
+.time-marker {
+  position: relative;
+  font-family: 'Courier New', monospace;
+  color: #209CEE;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.time-marker::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: #209CEE;
+}
