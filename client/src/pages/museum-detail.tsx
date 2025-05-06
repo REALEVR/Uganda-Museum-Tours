@@ -221,198 +221,207 @@ const MuseumDetail = () => {
             
             <div className="mt-12">
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <div className="time-marker mb-1">HISTORICAL RECORDS</div>
-                <h2 className="font-heading font-bold text-2xl mb-4 text-white">Cultural Significance of {museum.name}</h2>
-                <p className="text-blue-100/90 leading-relaxed mb-6 bg-primary/10 backdrop-blur-sm p-4 rounded-md border border-primary/20">
+                <div className="subtle-accent mb-2">About This Museum</div>
+                <h2 className="text-2xl font-semibold mb-4">Cultural Significance</h2>
+                <p className="text-gray-700 leading-relaxed mb-8 text-lg">
                   {museum.description}
                 </p>
-                <p className="text-blue-100/90 leading-relaxed mb-6 holographic-overlay">
-                  <span className="text-primary font-mono">[ARCHIVIST NOTE]:</span> This virtual preservation allows observers from {futureYear} to explore authentic Ugandan cultural artifacts as they existed
-                  in the early 21st century. The interactive chronometric visualization engine reconstructs the historical site in its original form,
-                  preserving this pivotal cultural heritage that shaped contemporary East African identity.
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  This virtual tour allows visitors to explore authentic Ugandan cultural artifacts and experience the museum's 
+                  architecture and exhibits through an immersive 360° interface. Navigate through the historical site and discover 
+                  the rich cultural heritage that continues to influence East African identity.
                 </p>
               </motion.div>
               
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8"
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="mt-12"
               >
-                <div className="time-marker mb-2">ARTIFACT DATABASE</div>
-                <h3 className="font-heading font-bold text-xl mb-4 text-white">Preserved Cultural Elements</h3>
+                <div className="subtle-accent mb-2">Featured Artifacts</div>
+                <h3 className="text-xl font-semibold mb-6">Cultural Elements</h3>
                 
-                <div className="space-y-4 mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                   {artifacts.map((artifact, index) => (
-                    <div key={index} className="timeline-item">
-                      <h4 className="font-bold text-primary">{artifact.name}</h4>
-                      <div className="text-sm flex justify-between">
-                        <span className="text-blue-100/70">Era: {artifact.era}</span>
-                        <span className="text-primary/80">{artifact.significance}</span>
-                      </div>
+                    <div key={index} className="clean-card p-5 hover:shadow-lg transition-all duration-300">
+                      <h4 className="font-semibold text-lg mb-2">{artifact.name}</h4>
+                      <div className="text-sm text-gray-500 mb-2">Era: {artifact.era}</div>
+                      <div className="text-gray-700">{artifact.significance}</div>
                     </div>
                   ))}
                 </div>
               </motion.div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="futuristic-card p-6 rounded-lg"
-                >
-                  <div className="time-marker">PORTAL FEATURES</div>
-                  <h3 className="font-heading font-bold text-lg mb-3 text-white">Temporal Viewing Technology</h3>
-                  <ul className="space-y-2 text-blue-100/90">
-                    <li className="flex items-start">
-                      <i className="ri-check-line text-success mt-1 mr-2"></i>
-                      <span>Full 360° temporal reconstruction of historical spaces</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="ri-check-line text-success mt-1 mr-2"></i>
-                      <span>Artifact information nodes with historical context</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="ri-check-line text-success mt-1 mr-2"></i>
-                      <span>Cultural preservation data from authentic Ugandan sources</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="ri-check-line text-success mt-1 mr-2"></i>
-                      <span>High-fidelity reconstruction with quantum rendering</span>
-                    </li>
-                  </ul>
-                </motion.div>
+              <div className="mt-14">
+                <div className="subtle-accent mb-2">Experience Features</div>
+                <h3 className="text-xl font-semibold mb-8">Tour Technology</h3>
                 
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="futuristic-card p-6 rounded-lg"
-                >
-                  <div className="time-marker">PORTAL SPECIFICATIONS</div>
-                  <h3 className="font-heading font-bold text-lg mb-3 text-white">Temporal Access Details</h3>
-                  <ul className="space-y-2 text-blue-100/90">
-                    <li className="flex items-start">
-                      <i className="ri-time-line text-primary mt-1 mr-2"></i>
-                      <span>Estimated temporal immersion: {museum.duration} minutes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="ri-global-line text-primary mt-1 mr-2"></i>
-                      <span>Linguistic adaptation: English translation matrix</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="ri-device-line text-primary mt-1 mr-2"></i>
-                      <span>Compatible with all neural and traditional interfaces</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="ri-calendar-line text-primary mt-1 mr-2"></i>
-                      <span>Temporal access granted for 30 standard days</span>
-                    </li>
-                  </ul>
-                </motion.div>
+                <div className="feature-group">
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.3 }}
+                    className="feature-item clean-card"
+                  >
+                    <div className="feature-icon bg-blue-50">
+                      <i className="ri-panorama-line text-primary text-xl"></i>
+                    </div>
+                    <h3>360° Viewing</h3>
+                    <p className="text-gray-600">Complete immersive reconstruction of historical spaces</p>
+                  </motion.div>
+                  
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.4 }}
+                    className="feature-item clean-card"
+                  >
+                    <div className="feature-icon bg-blue-50">
+                      <i className="ri-information-line text-primary text-xl"></i>
+                    </div>
+                    <h3>Artifact Info</h3>
+                    <p className="text-gray-600">Interactive information nodes with historical context</p>
+                  </motion.div>
+                  
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.5 }}
+                    className="feature-item clean-card"
+                  >
+                    <div className="feature-icon bg-blue-50">
+                      <i className="ri-global-line text-primary text-xl"></i>
+                    </div>
+                    <h3>Cultural Content</h3>
+                    <p className="text-gray-600">Authentic Ugandan cultural data and narratives</p>
+                  </motion.div>
+                  
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.6 }}
+                    className="feature-item clean-card"
+                  >
+                    <div className="feature-icon bg-blue-50">
+                      <i className="ri-device-line text-primary text-xl"></i>
+                    </div>
+                    <h3>Cross-Platform</h3>
+                    <p className="text-gray-600">Works on all devices with no additional software</p>
+                  </motion.div>
+                </div>
+                
+                <div className="bg-blue-50 rounded-2xl p-6 mt-8">
+                  <div className="flex items-center mb-3">
+                    <i className="ri-time-line text-primary text-xl mr-2"></i>
+                    <span className="text-gray-800 font-medium">Tour Duration: Approximately {museum.duration} minutes</span>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="ri-calendar-line text-primary text-xl mr-2"></i>
+                    <span className="text-gray-800 font-medium">Access Period: 30 days from purchase</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* Right column - Temporal Access Portal */}
+          {/* Right column - Purchase Section */}
           <div className="w-full lg:w-1/3">
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="futuristic-card rounded-lg overflow-hidden sticky top-24"
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="clean-card rounded-2xl overflow-hidden sticky top-24 pb-4"
             >
-              <div className="p-6 bg-primary text-white">
-                <div className="time-marker text-white/90">TEMPORAL ACCESS PERMIT</div>
-                <h2 className="font-heading font-bold text-2xl mb-2">{museum.name}</h2>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <i className="ri-time-line mr-1"></i>
-                    <span>{museum.duration} min immersion</span>
-                  </div>
+              <div className="p-8 bg-white">
+                <div className="subtle-accent mb-1">Virtual Tour Pass</div>
+                <h2 className="text-2xl font-semibold mb-4">{museum.name}</h2>
+                
+                <div className="flex items-center gap-3 mb-6">
                   {museum.rating && (
-                    <div className="flex items-center">
-                      <i className="ri-star-fill text-secondary mr-1"></i>
-                      <span>Historical Rating: {(museum.rating / 10).toFixed(1)}/5</span>
+                    <div className="bg-blue-50 px-3 py-1 rounded-full text-sm">
+                      <span className="text-gray-700">{(museum.rating / 10).toFixed(1)}/5 Rating</span>
                     </div>
                   )}
-                </div>
-              </div>
-              
-              <div className="p-6 bg-white/90 backdrop-blur-sm">
-                <div className="mb-6 relative">
-                  <div className="time-marker">TEMPORAL CREDIT ALLOCATION</div>
-                  <div className="text-3xl font-bold text-primary mb-1 glow-text">${formattedPrice}</div>
-                  <div className="bg-primary/10 px-2 py-1 rounded text-xs inline-block">
-                    <i className="ri-history-line mr-1"></i> 30-day access to temporal stream
+                  <div className="bg-blue-50 px-3 py-1 rounded-full text-sm">
+                    <span className="text-gray-700">{museum.duration} min tour</span>
                   </div>
                 </div>
                 
-                <Separator className="my-4" />
+                <div className="mb-8">
+                  <div className="text-3xl font-semibold mb-1">${formattedPrice}</div>
+                  <div className="text-gray-500 text-sm">
+                    30-day access to virtual tour
+                  </div>
+                </div>
                 
-                <div className="space-y-3 mb-6">
-                  <h3 className="font-heading font-medium text-lg">Access Privileges:</h3>
-                  <ul className="space-y-3">
+                <Separator className="my-6" />
+                
+                <div className="space-y-3 mb-8">
+                  <h3 className="font-medium text-lg">Your Tour Includes:</h3>
+                  <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start">
-                      <i className="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                      <span>Full temporal reconstruction of {museum.name}</span>
+                      <i className="ri-check-line text-primary mt-1 mr-2"></i>
+                      <span>Full 360° virtual reconstruction of {museum.name}</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                      <span>Interactive RealEVR chronometric visualization</span>
+                      <i className="ri-check-line text-primary mt-1 mr-2"></i>
+                      <span>Interactive RealEVR visualization technology</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                      <span>Complete artifact database with provenance data</span>
+                      <i className="ri-check-line text-primary mt-1 mr-2"></i>
+                      <span>Complete artifact database with historical context</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="ri-checkbox-circle-line text-primary mt-1 mr-2"></i>
-                      <span>Cross-device temporal stream synchronization</span>
+                      <i className="ri-check-line text-primary mt-1 mr-2"></i>
+                      <span>Access on all your devices</span>
                     </li>
                   </ul>
                 </div>
                 
                 {hasAccess ? (
                   <>
-                    <div className="border-pulse bg-primary/5 border border-primary/30 rounded-md p-3 mb-6 flex items-center">
+                    <div className="bg-blue-50 rounded-xl p-4 mb-6 flex items-center">
                       <i className="ri-shield-check-line text-primary text-xl mr-2"></i>
-                      <span className="text-primary font-medium">Temporal Access Already Authorized</span>
+                      <span className="text-gray-700 font-medium">You already have access to this tour</span>
                     </div>
                     <Button 
                       onClick={handleStartTour}
-                      className="w-full bg-primary text-white font-medium hover:bg-primary/90 py-3 glow-border"
+                      className="clean-button w-full py-3 text-base"
                     >
-                      <i className="ri-time-line mr-2"></i> Initiate Temporal Immersion
+                      <i className="ri-play-circle-line mr-2"></i> Start Virtual Tour
                     </Button>
                   </>
                 ) : (
                   <>
                     <Button 
                       onClick={handleStartTour}
-                      className="w-full bg-primary text-white font-medium hover:bg-primary/90 py-3 mb-3 glow-border"
+                      className="clean-button w-full py-3 text-base"
                     >
-                      <i className="ri-key-2-line mr-2"></i> Request Temporal Access Key
+                      <i className="ri-shopping-cart-line mr-2"></i> Buy Virtual Tour
                     </Button>
-                    <div className="text-center text-sm text-dark/70">
-                      <i className="ri-shield-keyhole-line mr-1"></i> Quantum-secured transaction protocol
+                    <div className="text-center text-xs text-gray-500 mt-3">
+                      Secure payment processing
                     </div>
                   </>
                 )}
                 
-                <div className="mt-6 text-center p-3 bg-primary/5 rounded-md border border-primary/20">
-                  <div className="time-marker mb-1">ENHANCED ACCESS OPTION</div>
-                  <p className="text-sm">
-                    Access both pioneering museums in a single temporal stream with our{" "}
+                <div className="mt-8 p-5 bg-blue-50 rounded-xl">
+                  <div className="subtitle-accent font-medium mb-2">Save with a Bundle</div>
+                  <p className="text-sm text-gray-700 mb-3">
+                    Get access to both pioneering museums with our{" "}
                     <Link href="/#pricing">
-                      <span className="text-primary hover:underline glow-text cursor-pointer">Pioneering Museums Time Key</span>
+                      <span className="text-primary hover:underline cursor-pointer font-medium">Pioneering Museums Pass</span>
                     </Link>
-                    {" "}at 30% reduced temporal credit allocation.
+                    {" "}and save 30%.
                   </p>
+                  <Link href="/#pricing">
+                    <Button className="clean-button secondary w-full text-sm">Learn More</Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
