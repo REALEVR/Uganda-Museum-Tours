@@ -1,111 +1,166 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Museum } from "@shared/schema";
-import MuseumCard from "@/components/museum-card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useAuth } from "@/hooks/use-auth";
+import React, { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
+import { Search, Filter, ArrowUpDown } from 'lucide-react';
+import MuseumCard from '@/components/museum-card';
+import { Museum } from '@shared/schema';
 
 const Museums = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const { isAuthenticated, openLoginModal } = useAuth();
+  const { t } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortOption, setSortOption] = useState<'name' | 'rating' | 'price'>('rating');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   
   // Fetch all museums
   const { data: museums = [], isLoading } = useQuery<Museum[]>({
-    queryKey: ['/api/museums'],
+    queryKey: ['/api/museums']
   });
-  
-  // Filter museums based on search query
+
+  // Search and filter museums
   const filteredMuseums = museums.filter(museum => 
-    museum.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    museum.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     museum.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Sort museums
+  const sortedMuseums = [...filteredMuseums].sort((a, b) => {
+    let comparison = 0;
+    
+    switch (sortOption) {
+      case 'name':
+        comparison = a.name.localeCompare(b.name);
+        break;
+      case 'rating':
+        const ratingA = a.rating || 0;
+        const ratingB = b.rating || 0;
+        comparison = ratingA - ratingB;
+        break;
+      case 'price':
+        comparison = a.price - b.price;
+        break;
+    }
+    
+    return sortDirection === 'asc' ? comparison : -comparison;
+  });
+
+  // Toggle sort direction
+  const toggleSortDirection = () => {
+    setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+  };
   
-  // Create loading skeletons for museums
-  const loadingSkeletons = Array.from({ length: 6 }, (_, i) => (
-    <div key={i} className="bg-white rounded-lg overflow-hidden shadow-md">
-      <Skeleton className="h-56 w-full" />
-      <div className="p-5">
-        <Skeleton className="h-6 w-3/4 mb-2" />
-        <Skeleton className="h-4 w-full mb-2" />
-        <Skeleton className="h-4 w-full mb-4" />
-        <div className="flex justify-between mb-4">
-          <Skeleton className="h-4 w-1/4" />
-          <Skeleton className="h-4 w-1/4" />
-        </div>
-        <Skeleton className="h-10 w-full" />
-      </div>
-    </div>
-  ));
-  
+  // Handle sort option change
+  const handleSortChange = (option: 'name' | 'rating' | 'price') => {
+    if (sortOption === option) {
+      toggleSortDirection();
+    } else {
+      setSortOption(option);
+      setSortDirection('desc');
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <h1 className="font-heading font-bold text-4xl mb-4">Explore Our Virtual Museums</h1>
-        <p className="text-dark/70 max-w-2xl mx-auto mb-8">
-          Discover Uganda's rich cultural heritage through our collection of immersive virtual museum tours
-        </p>
+    <div className="py-12 px-6">
+      <div className="container mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-medium mb-4">
+            {t('museums.title')}
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            {t('museums.subtitle')}
+          </p>
+        </div>
         
-        {/* Search Bar */}
-        <div className="max-w-md mx-auto">
-          <div className="relative">
-            <Input
+        {/* Search and Filters */}
+        <div className="mb-8 flex flex-col sm:flex-row gap-4">
+          <div className="flex-grow relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-muted-foreground" />
+            </div>
+            <input
               type="text"
-              placeholder="Search museums..."
+              placeholder={t('museums.searchPlaceholder')}
+              className="w-full pl-10 pr-4 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 py-2"
             />
-            <i className="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-dark/40"></i>
-            {searchQuery && (
-              <Button
-                variant="ghost"
-                className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 p-0"
-                onClick={() => setSearchQuery("")}
-                aria-label="Clear search"
+          </div>
+          
+          <div className="flex gap-2">
+            <div className="relative">
+              <button
+                onClick={() => handleSortChange('name')}
+                className={`px-4 py-2 border rounded-md flex items-center ${
+                  sortOption === 'name' ? 'border-primary text-primary' : 'border-input text-muted-foreground'
+                }`}
               >
-                <i className="ri-close-line"></i>
-              </Button>
-            )}
+                {t('museums.sortName')}
+                {sortOption === 'name' && (
+                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                )}
+              </button>
+            </div>
+            
+            <div className="relative">
+              <button
+                onClick={() => handleSortChange('rating')}
+                className={`px-4 py-2 border rounded-md flex items-center ${
+                  sortOption === 'rating' ? 'border-primary text-primary' : 'border-input text-muted-foreground'
+                }`}
+              >
+                {t('museums.sortRating')}
+                {sortOption === 'rating' && (
+                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                )}
+              </button>
+            </div>
+            
+            <div className="relative">
+              <button
+                onClick={() => handleSortChange('price')}
+                className={`px-4 py-2 border rounded-md flex items-center ${
+                  sortOption === 'price' ? 'border-primary text-primary' : 'border-input text-muted-foreground'
+                }`}
+              >
+                {t('museums.sortPrice')}
+                {sortOption === 'price' && (
+                  <ArrowUpDown className="ml-2 h-4 w-4" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Museums Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        {/* Museum Listings */}
         {isLoading ? (
-          loadingSkeletons
-        ) : filteredMuseums.length > 0 ? (
-          filteredMuseums.map((museum) => (
-            <MuseumCard 
-              key={museum.id} 
-              museum={museum} 
-              onPreviewClick={() => {
-                if (!isAuthenticated) {
-                  openLoginModal();
-                } else {
-                  window.location.href = `/museum/${museum.id}`;
-                }
-              }}
-            />
-          ))
+          <div className="h-64 flex items-center justify-center">
+            <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" aria-label="Loading" />
+          </div>
+        ) : sortedMuseums.length > 0 ? (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sortedMuseums.map((museum) => {
+              // Mark featured museums
+              const museumWithFeatures = {
+                ...museum,
+                featured: [1, 7].includes(museum.id),
+                technology: museum.id === 1 || museum.id === 7 ? 'RealEVR' : 'Panellum'
+              };
+              
+              return (
+                <MuseumCard 
+                  key={museum.id} 
+                  museum={museumWithFeatures} 
+                />
+              );
+            })}
+          </div>
         ) : (
-          <div className="col-span-full text-center py-12">
-            <i className="ri-search-eye-line text-primary text-4xl mb-3"></i>
-            <h3 className="text-xl font-medium mb-2">No museums found</h3>
-            <p className="text-dark/70">
-              We couldn't find any museums matching your search. Please try different keywords.
-            </p>
-            {searchQuery && (
-              <Button 
-                variant="outline" 
-                className="mt-4"
-                onClick={() => setSearchQuery("")}
-              >
-                Clear Search
-              </Button>
-            )}
+          <div className="text-center py-16">
+            <div className="inline-flex justify-center items-center rounded-full bg-muted p-6 mb-4">
+              <Filter className="h-10 w-10 text-muted-foreground" />
+            </div>
+            <h3 className="text-lg font-medium">{t('museums.noResults')}</h3>
+            <p className="text-muted-foreground mt-2">{t('museums.tryAdjusting')}</p>
           </div>
         )}
       </div>
