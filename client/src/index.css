@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "./styles/tesla.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import Tesla-inspired styles */
-@import "./styles/tesla.css";
 
 /* Tesla-inspired Design System with Ugandan Cultural Elements */
 :root {
