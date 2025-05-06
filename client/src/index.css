@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Tesla-inspired styles */
+@import "./styles/tesla.css";
+
 /* Tesla-inspired Design System with Ugandan Cultural Elements */
 :root {
   /* Tesla-inspired clean, minimal color scheme */

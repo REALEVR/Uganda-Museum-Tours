@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { Clock, Star, ArrowRight } from 'lucide-react';
+import MuseumImage from '@/components/ui/museum-image';
 
 interface Museum {
   id: number;
@@ -27,7 +28,7 @@ const MuseumCard: React.FC<MuseumCardProps> = ({ museum, onPreviewClick }) => {
     <div className="tesla-card group relative overflow-hidden">
       {/* Image container with overlay */}
       <div className="relative aspect-video overflow-hidden">
-        <img 
+        <MuseumImage 
           src={museum.imageUrl} 
           alt={museum.name} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -77,7 +78,7 @@ const MuseumCard: React.FC<MuseumCardProps> = ({ museum, onPreviewClick }) => {
         </div>
         
         <div className="mt-5 grid grid-cols-2 gap-3">
-          <Link href={`/museum/${museum.id}`}>
+          <Link href={`/museums/${museum.id}`}>
             <a className="tesla-button secondary py-2 px-4 text-xs">
               {t('museums.viewDetails')}
             </a>
