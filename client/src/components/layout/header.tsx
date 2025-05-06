@@ -1,164 +1,164 @@
-import { useState } from "react";
-import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/use-auth";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'wouter';
+import { useTranslation } from 'react-i18next';
+import { useAuth } from '@/hooks/use-auth';
+import LanguageSelector from '../language-selector';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
+  const { isAuthenticated, user, logout, openLoginModal, openRegisterModal } = useAuth();
   const [location] = useLocation();
-  const { user, logout, openLoginModal, openRegisterModal } = useAuth();
-  const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Museums", path: "/museums" },
-    { name: "How It Works", path: "/#how-it-works" },
-    { name: "About", path: "/#about" },
-    { name: "Contact", path: "/#contact" },
-  ];
+  // Handle scroll state for navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const closeMenu = () => setIsOpen(false);
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md uganda-pattern-border top">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo and Name */}
+    <header className={`tesla-nav ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
         <Link href="/">
-          <div className="flex items-center space-x-3 cursor-pointer">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-              <i className="ri-gallery-line text-white text-xl"></i>
-            </div>
-            <div className="hidden md:block">
-              <h1 className="font-bold text-xl text-primary">Uganda Virtual Museums</h1>
-              <p className="text-xs text-black bg-white px-2 py-0.5 rounded">Ekiziba ky'Obuwangwa Bwaffe</p>
-            </div>
-          </div>
+          <a className="text-2xl font-semibold tracking-tighter">
+            <span className="sky-accent">Uganda</span>VR
+          </a>
         </Link>
-        
-        {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center">
-          <div className="flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link key={link.path} href={link.path}>
-                <div className={`px-4 py-2 rounded-md font-medium transition-all duration-200 ${
-                  location === link.path 
-                    ? 'text-primary bg-primary/10' 
-                    : 'text-primary/70 hover:text-primary hover:bg-primary/5'
-                }`}>
-                  {link.name}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </nav>
-        
-        {/* User Actions */}
-        <div className="flex items-center space-x-3">
-          <Button variant="ghost" className="px-4 py-2 text-primary/80 hover:text-primary button-hover-effect" aria-label="Search">
-            <i className="ri-search-line mr-1"></i> <span className="hidden md:inline">Search</span>
-          </Button>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link href="/">
+            <a className={`tesla-nav-link ${location === '/' ? 'text-primary font-medium' : ''}`}>
+              {t('common.home')}
+            </a>
+          </Link>
+          <Link href="/museums">
+            <a className={`tesla-nav-link ${location === '/museums' ? 'text-primary font-medium' : ''}`}>
+              {t('common.museums')}
+            </a>
+          </Link>
+          <LanguageSelector />
           
-          {user ? (
-            <div className="flex items-center space-x-3">
-              <Link href="/account">
-                <Button variant="ghost" className="px-4 py-2 text-primary/80 hover:text-primary button-hover-effect">
-                  <i className="ri-user-line mr-1"></i> <span className="hidden md:inline">{user.username}</span>
-                </Button>
-              </Link>
-              <Link href="/analytics">
-                <Button variant="ghost" className="px-4 py-2 text-primary/80 hover:text-primary button-hover-effect">
-                  <i className="ri-bar-chart-line mr-1"></i> <span className="hidden md:inline">Analytics</span>
-                </Button>
-              </Link>
-              <Button 
-                variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
-                onClick={logout}
-              >
-                Sign Out
-              </Button>
+          {isAuthenticated ? (
+            <div className="relative group">
+              <button className="tesla-nav-link flex items-center">
+                {user?.name || user?.username}
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-1">
+                  <Link href="/dashboard">
+                    <a className="block px-4 py-2 text-sm hover:bg-muted">
+                      {t('common.dashboard')}
+                    </a>
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="block w-full text-left px-4 py-2 text-sm hover:bg-muted"
+                  >
+                    {t('common.logout')}
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
-            <Button 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
-              onClick={openLoginModal}
-            >
-              Sign In
-            </Button>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={openLoginModal}
+                className="tesla-nav-link font-medium"
+              >
+                {t('common.login')}
+              </button>
+              <button
+                onClick={openRegisterModal}
+                className="tesla-button primary py-2 px-4 text-sm max-w-none w-auto"
+              >
+                {t('common.register')}
+              </button>
+            </div>
           )}
-          
-          {/* Mobile Menu */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" className="md:hidden" aria-label="Menu">
-                <i className="ri-menu-line text-xl"></i>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                {navLinks.map((link) => (
-                  <Link key={link.path} href={link.path}>
-                    <div 
-                      className={`py-2 px-4 rounded-md font-medium cursor-pointer ${location === link.path ? 'bg-primary/10 text-primary' : 'text-primary/80 hover:bg-primary/5'}`}
-                      onClick={closeMenu}
-                    >
-                      {link.name}
-                    </div>
-                  </Link>
-                ))}
-                
-                {!user && (
-                  <div className="flex flex-col gap-2 mt-4">
-                    <Button 
-                      className="w-full bg-primary text-white hover:bg-primary/90 button-hover-effect"
-                      onClick={() => {
-                        closeMenu();
-                        openLoginModal();
-                      }}
-                    >
-                      Sign In
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
-                      onClick={() => {
-                        closeMenu();
-                        openRegisterModal();
-                      }}
-                    >
-                      Register
-                    </Button>
-                  </div>
-                )}
-                
-                {user && (
-                  <div className="mt-4 flex flex-col gap-2">
-                    <Link href="/analytics">
-                      <div 
-                        className="py-2 px-4 rounded-md font-medium bg-primary/10 text-primary cursor-pointer"
-                        onClick={closeMenu}
-                      >
-                        <i className="ri-bar-chart-line mr-1"></i> Analytics Dashboard
-                      </div>
-                    </Link>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-white button-hover-effect"
-                      onClick={() => {
-                        closeMenu();
-                        logout();
-                      }}
-                    >
-                      Sign Out
-                    </Button>
-                  </div>
-                )}
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 focus:outline-none"
+          onClick={toggleMobileMenu}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-t border-border animate-fade-in-up">
+          <div className="container mx-auto py-4 px-6 flex flex-col space-y-4">
+            <Link href="/">
+              <a className={`py-2 ${location === '/' ? 'text-primary font-medium' : ''}`}>
+                {t('common.home')}
+              </a>
+            </Link>
+            <Link href="/museums">
+              <a className={`py-2 ${location === '/museums' ? 'text-primary font-medium' : ''}`}>
+                {t('common.museums')}
+              </a>
+            </Link>
+            <div className="py-2">
+              <LanguageSelector />
+            </div>
+            
+            {isAuthenticated ? (
+              <>
+                <Link href="/dashboard">
+                  <a className="py-2">
+                    {t('common.dashboard')}
+                  </a>
+                </Link>
+                <button
+                  onClick={logout}
+                  className="py-2 text-left"
+                >
+                  {t('common.logout')}
+                </button>
+              </>
+            ) : (
+              <div className="flex flex-col space-y-3 pt-2">
+                <button
+                  onClick={openLoginModal}
+                  className="tesla-button secondary"
+                >
+                  {t('common.login')}
+                </button>
+                <button
+                  onClick={openRegisterModal}
+                  className="tesla-button primary"
+                >
+                  {t('common.register')}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </header>
   );
 };

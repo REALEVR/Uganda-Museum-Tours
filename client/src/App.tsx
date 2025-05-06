@@ -11,10 +11,12 @@ import MuseumDetail from "@/pages/museum-detail";
 import TourView from "@/pages/tour-view";
 import Checkout from "@/pages/checkout";
 import AnalyticsDashboard from "@/pages/analytics-dashboard";
-import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
+import Layout from "@/components/layout/layout";
 import LoginModal from "@/components/auth/login-modal";
 import RegisterModal from "@/components/auth/register-modal";
+
+// Initialize i18n
+import "./lib/i18n";
 
 function Router() {
   return (
@@ -35,13 +37,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <AuthProvider>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">
-              <Router />
-            </main>
-            <Footer />
-          </div>
+          <Layout>
+            <Router />
+          </Layout>
           
           <LoginModal />
           <RegisterModal />

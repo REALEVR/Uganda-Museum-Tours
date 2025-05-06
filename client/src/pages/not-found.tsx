@@ -1,21 +1,35 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { useLocation } from "wouter";
+import { useTranslation } from "react-i18next";
+import { Home, AlertCircle } from "lucide-react";
 
 export default function NotFound() {
-  return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
-          </div>
+  const [_, navigate] = useLocation();
+  const { t } = useTranslation();
 
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
-          </p>
-        </CardContent>
-      </Card>
+  return (
+    <div className="min-h-[80vh] w-full flex flex-col items-center justify-center py-16">
+      <div className="text-center max-w-3xl mx-auto px-6">
+        <div className="flex justify-center mb-6">
+          <div className="rounded-full bg-destructive/10 p-4">
+            <AlertCircle className="h-10 w-10 text-destructive" />
+          </div>
+        </div>
+        
+        <h1 className="text-6xl font-medium tracking-tight mb-4">404</h1>
+        <h2 className="text-2xl font-medium mb-6">{t('errors.notFound')}</h2>
+        
+        <p className="text-muted-foreground mb-10 max-w-lg mx-auto">
+          The page you are looking for doesn't exist or has been moved.
+        </p>
+        
+        <button 
+          onClick={() => navigate("/")}
+          className="tesla-button primary mx-auto flex items-center justify-center"
+        >
+          <Home className="mr-2 h-4 w-4" /> 
+          {t('errors.backHome')}
+        </button>
+      </div>
     </div>
   );
 }

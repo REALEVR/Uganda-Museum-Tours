@@ -1,69 +1,105 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import type { Museum } from "@shared/schema";
+import React from 'react';
+import { Link } from 'wouter';
+import { useTranslation } from 'react-i18next';
+import { Clock, Star, ArrowRight } from 'lucide-react';
+
+interface Museum {
+  id: number;
+  name: string;
+  description: string;
+  imageUrl: string;
+  duration: number;
+  price: number;
+  rating: number | null;
+  featured?: boolean;
+  technology?: string;
+}
 
 interface MuseumCardProps {
   museum: Museum;
   onPreviewClick?: () => void;
 }
 
-const MuseumCard = ({ museum, onPreviewClick }: MuseumCardProps) => {
-  const { id, name, description, imageUrl, duration, price, rating } = museum;
+const MuseumCard: React.FC<MuseumCardProps> = ({ museum, onPreviewClick }) => {
+  const { t } = useTranslation();
   
-  // Format the price from cents to dollars
-  const formattedPrice = (price / 100).toFixed(2);
-  
-  // Format the rating to be out of 5
-  const formattedRating = rating ? (rating / 10).toFixed(1) : "N/A";
-
   return (
-    <div className="tour-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-      <div className="relative h-56 overflow-hidden">
-        {museum.panellumUrl.includes('realevr.com') ? (
-          <div className="w-full h-full">
-            <iframe 
-              src={museum.panellumUrl} 
-              title={name}
-              className="w-full h-full border-0"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute top-0 left-0 right-0 bottom-0" onClick={onPreviewClick}></div>
-          </div>
-        ) : (
-          <img 
-            src={imageUrl} 
-            alt={name} 
-            className="w-full h-full object-cover"
-          />
-        )}
-        <div className="absolute top-3 right-3 bg-white/90 py-1 px-3 rounded-full text-sm font-medium">
-          ${formattedPrice}
-        </div>
+    <div className="tesla-card group relative overflow-hidden">
+      {/* Image container with overlay */}
+      <div className="relative aspect-video overflow-hidden">
+        <img 
+          src={museum.imageUrl} 
+          alt={museum.name} 
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         
-        {/* Museum name overlay at bottom of preview */}
-        <div className="absolute bottom-0 left-0 right-0 bg-dark/50 py-2 px-3">
-          <h3 className="font-heading font-bold text-white text-lg truncate">{name}</h3>
-        </div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60"></div>
+        
+        {/* Featured badge */}
+        {museum.featured && (
+          <div className="absolute top-3 right-3 bg-primary text-white text-xs px-2 py-1 rounded-sm font-medium uppercase tracking-wider">
+            Featured
+          </div>
+        )}
+        
+        {/* Technology badge */}
+        {museum.technology && (
+          <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-sm font-medium">
+            {museum.technology}
+          </div>
+        )}
       </div>
       
-      <div className="p-4">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center">
-            <i className="ri-time-line text-primary mr-1"></i>
-            <span className="text-xs text-dark/70">{duration} min tour</span>
+      {/* Content */}
+      <div className="p-5">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-lg font-medium">{museum.name}</h3>
+          <div className="flex items-center text-sm">
+            <Star className="h-4 w-4 text-yellow-500 mr-1" />
+            <span>{museum.rating ? museum.rating.toFixed(1) : '0.0'}</span>
           </div>
-          {rating && (
-            <div className="flex items-center">
-              <i className="ri-star-fill text-secondary mr-1"></i>
-              <span className="text-sm font-medium">{formattedRating}/5</span>
-            </div>
+        </div>
+        
+        <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+          {museum.description}
+        </p>
+        
+        <div className="flex justify-between items-center">
+          <div className="flex items-center text-sm text-muted-foreground">
+            <Clock className="h-4 w-4 mr-1" />
+            <span>{museum.duration} {t('museums.minutes')}</span>
+          </div>
+          
+          <div className="text-sm font-medium">
+            ${museum.price.toFixed(2)}
+          </div>
+        </div>
+        
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          <Link href={`/museum/${museum.id}`}>
+            <a className="tesla-button secondary py-2 px-4 text-xs">
+              {t('museums.viewDetails')}
+            </a>
+          </Link>
+          
+          {onPreviewClick ? (
+            <button 
+              onClick={onPreviewClick}
+              className="tesla-button primary py-2 px-4 text-xs flex items-center justify-center"
+            >
+              {t('museumDetail.preview')}
+              <ArrowRight className="ml-1 h-3 w-3" />
+            </button>
+          ) : (
+            <Link href={`/tour/${museum.id}`}>
+              <a className="tesla-button primary py-2 px-4 text-xs flex items-center justify-center">
+                {t('museums.startTour')}
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </a>
+            </Link>
           )}
         </div>
-        <Link href={`/museum/${id}`}>
-          <Button className="w-full py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition">
-            Start Virtual Tour
-          </Button>
-        </Link>
       </div>
     </div>
   );
