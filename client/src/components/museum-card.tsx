@@ -36,23 +36,18 @@ const MuseumCard = ({ museum, onPreviewClick }: MuseumCardProps) => {
             className="w-full h-full object-cover"
           />
         )}
-        <div className="tour-overlay absolute inset-0 bg-primary/70 opacity-0 transition-opacity flex items-center justify-center">
-          <Button 
-            variant="outline" 
-            onClick={onPreviewClick}
-            className="px-4 py-2 bg-white text-primary rounded-md font-medium"
-          >
-            Preview Tour
-          </Button>
-        </div>
         <div className="absolute top-3 right-3 bg-white/90 py-1 px-3 rounded-full text-sm font-medium">
           ${formattedPrice}
         </div>
+        
+        {/* Museum name overlay at bottom of preview */}
+        <div className="absolute bottom-0 left-0 right-0 bg-dark/50 py-2 px-3">
+          <h3 className="font-heading font-bold text-white text-lg truncate">{name}</h3>
+        </div>
       </div>
-      <div className="p-5">
-        <h3 className="font-heading font-bold text-xl mb-2">{name}</h3>
-        <p className="text-dark/70 mb-4 text-sm">{description}</p>
-        <div className="flex items-center justify-between">
+      
+      <div className="p-4">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center">
             <i className="ri-time-line text-primary mr-1"></i>
             <span className="text-xs text-dark/70">{duration} min tour</span>
@@ -65,7 +60,7 @@ const MuseumCard = ({ museum, onPreviewClick }: MuseumCardProps) => {
           )}
         </div>
         <Link href={`/museum/${id}`}>
-          <Button className="mt-4 w-full py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition">
+          <Button className="w-full py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition">
             Start Virtual Tour
           </Button>
         </Link>

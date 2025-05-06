@@ -140,5 +140,9 @@
 /* Fix for iframe z-index and interaction */
 .tour-card iframe {
   pointer-events: none; /* Prevent iframe from capturing clicks when in card */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
